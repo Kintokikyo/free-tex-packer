@@ -20,6 +20,7 @@ class OffsetEditor extends React.Component {
         this.handleStateChange = this.handleStateChange.bind(this);
         this.handleOffsetXChange = this.handleOffsetXChange.bind(this);
         this.handleOffsetYChange = this.handleOffsetYChange.bind(this);
+        this.handleApplyOffset = this.handleApplyOffset.bind(this);
 
         Observer.on(
             GLOBAL_EVENT.IMAGES_LIST_CHANGED,
@@ -135,6 +136,40 @@ class OffsetEditor extends React.Component {
         });
     }
 
+    handleApplyOffset() {
+    let stateName = this.state.selectedState;
+
+    if(!stateName) {
+        return;
+    }
+
+    let x = parseFloat(this.state.offsetX);
+    let y = parseFloat(this.state.offsetY);
+
+    if(Number.isNaN(x)) {
+        x = 0;
+    }
+
+    if(Number.isNaN(y)) {
+        y = 0;
+    }
+
+    let offsets = {
+        ...this.state.offsets,
+
+        [stateName]: {
+            x: x,
+            y: y
+        }
+    };
+
+    this.setState({
+        offsets: offsets,
+        offsetX: String(x),
+        offsetY: String(y)
+    });
+    }
+
     render() {
 
         return (
@@ -212,6 +247,16 @@ class OffsetEditor extends React.Component {
                         boxSizing: "border-box"
                     }}
                 />
+
+                <button
+                    type="button"
+                    onClick={this.handleApplyOffset}
+                    style={{
+                        width: "100%",
+                        marginTop: "8px"
+                    }}>
+                    Terapkan
+                </button>
 
             </div>
         );
