@@ -95,7 +95,7 @@ class About extends React.Component {
                                         {
                                             appInfo.contributors.map(contributor => {
                                                 return (
-                                                    <a key={'contributor-' + contributor.name} href={contributor.homepage} target="_blank" className="color-800">{contributor.name}</a>
+                                                    <a key={'contributor-' + contributor.name} href={contributor.homepage} target="_blank" className="color-800">{contributor.name}{contributor.role && <> — <b>{contributor.role}</b></>}</a>
                                                 )
                                             }).
                                             reduce((prev, curr) => [prev, ', ', curr])
