@@ -4,6 +4,7 @@ import JsonArray from './JsonArray';
 import XML from './XML';
 import UIKit from './UIKit';
 import Spine from './Spine';
+import Plist from './Plist';
 
 const list = [
     Grid,
@@ -11,7 +12,8 @@ const list = [
     JsonArray,
     XML,
     UIKit,
-    Spine
+    Spine,
+    Plist
 ];
 
 function getSplitterByType(type) {
