@@ -2,8 +2,14 @@ package com.dedigame.freetexpacker;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.net.Uri;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import androidx.webkit.WebViewAssetLoader;
 
 public class MainActivity extends Activity {
 
@@ -20,10 +26,42 @@ public class MainActivity extends Activity {
 
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
-        settings.setAllowFileAccess(true);
-        settings.setAllowContentAccess(true);
 
-        webView.loadUrl("file:///android_asset/web/index.html");
+        WebViewAssetLoader assetLoader =
+                new WebViewAssetLoader.Builder()
+                        .addPathHandler(
+                                "/assets/",
+                                new WebViewAssetLoader.AssetsPathHandler(this)
+                        )
+                        .build();
+
+        webView.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public WebResourceResponse shouldInterceptRequest(
+                    WebView view,
+                    WebResourceRequest request
+            ) {
+                return assetLoader.shouldInterceptRequest(
+                        request.getUrl()
+                );
+            }
+
+            @Override
+            @SuppressWarnings("deprecation")
+            public WebResourceResponse shouldInterceptRequest(
+                    WebView view,
+                    String url
+            ) {
+                return assetLoader.shouldInterceptRequest(
+                        Uri.parse(url)
+                );
+            }
+        });
+
+        webView.loadUrl(
+                "https://appassets.androidplatform.net/assets/web/index.html"
+        );
     }
 
     @Override
