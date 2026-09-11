@@ -10,11 +10,16 @@ class OffsetEditor extends React.Component {
 
         this.state = {
             states: [],
-            selectedState: ""
+            selectedState: "",
+            offsetX: "0",
+            offsetY: "0",
+            offsets: {}
         };
 
         this.updateStates = this.updateStates.bind(this);
         this.handleStateChange = this.handleStateChange.bind(this);
+        this.handleOffsetXChange = this.handleOffsetXChange.bind(this);
+        this.handleOffsetYChange = this.handleOffsetYChange.bind(this);
 
         Observer.on(
             GLOBAL_EVENT.IMAGES_LIST_CHANGED,
@@ -109,9 +114,24 @@ class OffsetEditor extends React.Component {
     }
 
     handleStateChange(e) {
-
+        let selectedState = e.target.value;
+        let offset = this.state.offsets[selectedState];
         this.setState({
-            selectedState: e.target.value
+            selectedState: selectedState,
+            offsetX: offset ? String(offset.x) : "0",
+            offsetY: offset ? String(offset.y) : "0"
+        });
+    }
+    
+    handleOffsetXChange(e) {
+        this.setState({
+            offsetX: e.target.value
+        });
+    }
+    
+    handleOffsetYChange(e) {
+        this.setState({
+            offsetY: e.target.value
         });
     }
 
@@ -166,8 +186,10 @@ class OffsetEditor extends React.Component {
 
                 <input
                     type="number"
+                    step="any"
                     className="border-color-gray"
-                    defaultValue="0"
+                    value={this.state.offsetX}
+                    onChange={this.handleOffsetXChange}
                     style={{
                         width: "100%",
                         boxSizing: "border-box",
@@ -181,8 +203,10 @@ class OffsetEditor extends React.Component {
 
                 <input
                     type="number"
+                    step="any"
                     className="border-color-gray"
-                    defaultValue="0"
+                    value={this.state.offsetY}
+                    onChange={this.handleOffsetYChange}
                     style={{
                         width: "100%",
                         boxSizing: "border-box"
