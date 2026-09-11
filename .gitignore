@@ -1,12 +1,5 @@
-.idea/*
-.vscode/*
-
-node_modules/*
-
-package-lock.json
-
-.DS_Store
-/index.js
-/index.js.map
-/dist/app
-/electron/www
+node_modules/
+dist/web/
+android/.gradle/
+android/build/
+android/app/build/
