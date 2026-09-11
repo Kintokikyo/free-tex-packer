@@ -72,6 +72,10 @@ class Plist extends Splitter {
                     continue;
                 }
 
+                if(frame.w <= 0 || frame.h <= 0) {
+                    continue;
+                }
+
                 let sourceSize = Plist.parseSize(item.sourceSize);
 
                 if(!sourceSize) {
