@@ -1,0 +1,140 @@
+OK;OK
+YES;Ya
+NO;Tidak
+CANCEL;Batal
+SAVE;Simpan
+IMAGES;Gambar
+LANGUAGE;Bahasa:
+ADD_IMAGES;Tambah gambar
+ADD_IMAGES_TITLE;Tambah gambar
+ADD_FOLDER;Tambah folder
+ADD_FOLDER_TITLE;Tambah folder
+ADD_ZIP;Tambah ZIP
+ADD_ZIP_TITLE;Tambah gambar dari ZIP
+IMAGE_DROP_HELP;atau seret dan lepas gambar di sini
+CLEAR;Bersihkan
+CLEAR_TITLE;Bersihkan semua gambar
+DELETE;Hapus
+DELETE_TITLE;Hapus gambar yang dipilih
+REPLACE_FILES_PROMPT;Ganti file yang sudah ada?
+DISPLAY_OUTLINES;Garis tepi:
+SCALE;Skala:
+SHOW_SPRITES;Animasi
+SPRITE_NAME;Nama sprite:
+ANIMATION_SPEED;Kecepatan animasi:
+TEXTURE_NAME;Nama tekstur:
+TEXTURE_NAME_TITLE;Nama tekstur untuk ekspor
+TEXTURE_FORMAT;Format tekstur:
+TEXTURE_FORMAT_TITLE;Format tekstur untuk ekspor
+REMOVE_FILE_EXT;Hapus ekstensi file:
+REMOVE_FILE_EXT_TITLE;Hapus ekstensi file dari nama sprite
+PREPEND_FOLDER;Tambahkan nama folder:
+PREPEND_FOLDER_TITLE;Tambahkan nama folder ke nama file
+BASE64_EXPORT_TITLE;Ekspor ke format base64 jika memungkinkan
+BASE64_EXPORT;Ekspor ke base64
+TINIFY_TITLE;Gunakan Tinify dengan https://tinypng.com
+TINIFY;Tinify
+TINIFY_KEY_TITLE;Kunci TinyPNG https://tinypng.com/developers
+TINIFY_KEY;Kunci TinyPNG
+DISABLE_SMOOTHING;Nonaktifkan penghalusan gambar
+DISABLE_SMOOTHING_TITLE;Nonaktifkan penghalusan gambar
+SCALE;Skala:
+SCALE_TITLE;Skala dasar tekstur
+FILTER;Filter:
+FILTER_TITLE;Filter untuk tekstur hasil
+FORMAT;Format:
+FORMAT_TITLE;Format ekspor
+FILE_NAME;Nama file:
+FILE_NAME_TITLE;Nama file hasil
+SAVE_PATH;Lokasi penyimpanan
+SAVE_PATH_TITLE;Lokasi untuk menyimpan hasil packing
+WIDTH;Lebar:
+WIDTH_TITLE;Lebar maksimum tekstur
+HEIGHT;Tinggi:
+HEIGHT_TITLE;Tinggi maksimum tekstur
+FIXED_SIZE;Ukuran tetap:
+POWER_OF_TWO;Pangkat dua:
+POWER_OF_TWO_TITLE;Ukuran tekstur pangkat dua
+FIXED_SIZE_TITLE;Ukuran tekstur tetap
+PADDING;Jarak:
+PADDING_TITLE;Jarak antar sprite
+EXTRUDE;Ekstrusi:
+EXTRUDE_TITLE;Ukuran ekstrusi piksel tepi sprite
+ALLOW_ROTATION;Izinkan rotasi:
+ALLOW_ROTATION_TITLE;Izinkan rotasi sprite
+ALLOW_TRIM;Izinkan trim:
+ALLOW_TRIM_TITLE;Izinkan trim sprite
+ALPHA_THRESHOLD;Ambang alfa:
+ALPHA_THRESHOLD_TITLE;Nilai ambang alfa
+TRIM_MODE;Mode trim:
+TRIM_MODE_TITLE;Varian mode trim
+DETECT_IDENTICAL;Deteksi gambar identik:
+DETECT_IDENTICAL_TITLE;Deteksi sprite yang identik
+PACKER;Packer:
+PACKER_TITLE;Packer
+PACKER_METHOD;Metode:
+PACKER_METHOD_TITLE;Metode packer
+EXPORT;Ekspor
+PLEASE_WAIT;Harap tunggu...
+INVALID_SIZE_ERROR;Ukuran tidak valid. Minimal: %sx%s
+NO_IMAGES_ERROR;Silakan tambahkan gambar terlebih dahulu
+CLEAR_WARNING;Yakin ingin membersihkan semua gambar?
+INVALID_ZIP_ERROR;File ZIP tidak valid
+NO_TINIFY_KEY_ERROR;Silakan masukkan kunci TinyPNG Anda https://tinypng.com/developers
+TINIFY_ERROR;Kesalahan Tinify: %s
+TINIFY_ERROR_COMMON;Kesalahan Tinify...
+OLD_BROWSER_MESSAGE1;Maaf, browser Anda terlalu lama untuk menjalankan aplikasi ini...
+OLD_BROWSER_MESSAGE2;Silakan gunakan salah satu browser modern berikut:
+ABOUT_HOMEPAGE;Beranda:
+ABOUT_SOURCES;Sumber:
+ABOUT_BUGS;Pelacak bug:
+ABOUT_APPS;Unduh aplikasi:
+ABOUT_WEB;Versi web:
+ABOUT_LIBS;Library yang digunakan:
+ABOUT_GULP_VERSION;Modul Gulp:
+ABOUT_WEBPACK_VERSION;Plugin Webpack:
+ABOUT_CONTRIBUTORS;Kontributor:
+EXPORTER_ERROR;Kesalahan ekspor: %s
+CUSTOM_EXPORTER_ERROR;Kesalahan template: %s
+FILE_EXT;Ekstensi file:
+DOCUMENTATION;dokumentasi
+SAVE_CHANGES_CONFIRM;Simpan perubahan proyek?
+MENU_FILE;File
+MENU_FILE_PROJECT_NEW;Proyek baru
+MENU_FILE_PROJECT_LOAD;Buka proyek
+MENU_FILE_PROJECT_LOAD_RECENT;Buka proyek terbaru
+MENU_FILE_PROJECT_SAVE;Simpan proyek
+MENU_FILE_PROJECT_SAVE_AS;Simpan proyek sebagai...
+MENU_FILE_PREFERENCES_SAVE;Simpan preferensi
+MENU_FILE_INSTALL_CLI;Instal CLI
+MENU_FILE_EXIT;Keluar
+MENU_ACTIONS;Aksi
+MENU_ACTIONS_ADD_IMAGES;Tambah gambar
+MENU_ACTIONS_ADD_FOLDER;Tambah folder
+MENU_ACTIONS_SELECT_ALL;Pilih semua
+MENU_ACTIONS_DELETE;Hapus
+MENU_ACTIONS_CLEAR;Bersihkan
+MENU_ACTIONS_EXPORT;Ekspor
+MENU_TOOLS;Alat
+MENU_TOOLS_SPLITTER;Pisahkan sheet
+MENU_LANGUAGE;Bahasa
+MENU_HELP;Bantuan
+MENU_HELP_ABOUT;Tentang
+UPDATER_TITLE;Versi baru tersedia: %s
+CLOSE;Tutup
+INSTALL;Instal
+SKIP_VERSION;Lewati
+SKIP_VERSION_CONFIRM;Yakin ingin melewati versi ini dan tidak menampilkannya lagi?
+CONTEXT_MENU_UNDO;Urungkan
+CONTEXT_MENU_REDO;Ulangi
+CONTEXT_MENU_CUT;Potong
+CONTEXT_MENU_COPY;Salin
+CONTEXT_MENU_PASTE;Tempel
+CONTEXT_MENU_DELETE;Hapus
+CONTEXT_MENU_SELECT_ALL;Pilih semua
+SPLIT;Pisahkan
+SELECT_TEXTURE;Tekstur
+SELECT_DATA_FILE;File data
+SPLITTER;Pisahkan sheet
+SPLITTER_ERROR_NO_FRAMES;Sprite tidak ditemukan. Kemungkinan format atlas tidak benar.
+HOLD_TRIM;Pertahankan trim:
