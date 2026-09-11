@@ -13,7 +13,8 @@
     "es",
     "ru",
     "zh-cn",
-    "de"
+    "de",
+    "id"
   ],
   "contributors": [
     {
@@ -47,6 +48,10 @@
     {
       "name": "Davide Matta aka DadeKuma",
       "homepage": "https://github.com/DadeKuma"
+    }, 
+    {
+      "name": "Dedi Kurniawan (Android port)",
+      "homepage": "https://github.com/Kintokikyo"
     }
   ],
   "scripts": {
