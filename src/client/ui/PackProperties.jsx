@@ -15,6 +15,7 @@ import I18 from '../utils/I18';
 import {Observer, GLOBAL_EVENT} from '../Observer';
 
 import FileSystem from 'platform/FileSystem';
+import OffsetEditor from './OffsetEditor.jsx';
 
 const STORAGE_OPTIONS_KEY = "pack-options";
 const STORAGE_CUSTOM_EXPORTER_KEY = "custom-exporter";
@@ -433,6 +434,7 @@ class PackProperties extends React.Component {
                             </tr>
                         </tbody>
                     </table>
+                    <OffsetEditor />
                 </div>
             </div>
         );
