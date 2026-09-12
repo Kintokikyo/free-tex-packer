@@ -54,6 +54,8 @@ function getExporterByType(type) {
 function prepareData(data, options) {
 
     let opt = Object.assign({}, options);
+    let offsets = options.offsets || {};
+    delete opt.offsets;
 
     opt.imageName = opt.imageName || "texture";
     opt.imageFile = opt.imageFile || (opt.imageName + "." + options.textureFormat);
@@ -93,6 +95,22 @@ function prepareData(data, options) {
             spriteSourceSize.y = 0;
             sourceSize.w = spriteSourceSize.w;
             sourceSize.h = spriteSourceSize.h;
+        }
+
+        let frameName = item.originalFile || item.file;
+        frameName = frameName
+            .split("/")
+            .pop()
+            .replace(/\.[^.]+$/, "");
+        let stateMatch = frameName.match(/^(.*?)[_-]\d+$/);
+        if(stateMatch) {
+            let stateName = stateMatch[1];
+            let offset = offsets[stateName];
+            
+            if(offset) {
+                spriteSourceSize.x = offset.x;
+                spriteSourceSize.y = offset.y;
+            }
         }
         
         if(opt.scale !== 1) {
