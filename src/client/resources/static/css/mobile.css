@@ -1663,7 +1663,6 @@
        ===================================================== */
 
     .texture-view {
-        background: #252a32 !important;
         border-radius: 6px;
     }
 
@@ -1870,25 +1869,27 @@
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    .props-list .btn-export,
-    .props-list button[type="submit"] {
-        background: #1677e8 !important;
+    /* Tombol Ekspor panel kanan */
+    .pack-properties-containter table tr td.center-align > .btn {
+        width: 100%;
+        background: #3182ce !important;
         color: #ffffff !important;
-        border-color: #1677e8 !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
         border-radius: 7px !important;
         font-weight: 700;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+        box-sizing: border-box;
     }
 
-    .props-list .btn-export:hover,
-    .props-list button[type="submit"]:hover {
-        background: #2585f0 !important;
-        border-color: #2585f0 !important;
+    .pack-properties-containter table tr td.center-align > .btn:hover {
+        background: #3b8edb !important;
+        border: none !important;
     }
 
-    .props-list .btn-export:active,
-    .props-list button[type="submit"]:active {
-        background: #0f68d1 !important;
+    .pack-properties-containter table tr td.center-align > .btn:active {
+        background: #2874b8 !important;
+        border: none !important;
         transform: scale(0.98);
     }
 
