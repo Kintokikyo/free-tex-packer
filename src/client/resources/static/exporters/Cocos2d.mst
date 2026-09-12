@@ -20,7 +20,7 @@
         <key>rotated</key>
         <<%rotated%>/>
         <key>sourceColorRect</key>
-        <string>{{<%spriteSourceSize.x%>,<%spriteSourceSize.y%>},{<%spriteSourceSize.w%>,<%spriteSourceSize.h%>}}</string>
+        <string>{{<%sourceColorRect.x%>,<%sourceColorRect.y%>},{<%sourceColorRect.w%>,<%sourceColorRect.h%>}}</string>
         <key>sourceSize</key>
         <string>{<%sourceSize.w%>,<%sourceSize.h%>}</string>
       </dict>
