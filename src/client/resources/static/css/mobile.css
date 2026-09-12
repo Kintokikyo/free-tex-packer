@@ -1272,106 +1272,6 @@
 }
 
 /* =========================================================
-   MOBILE UI - LEFT PANEL FINAL POLISH
-   Visual only
-   Tidak mengubah layout / scroll
-   ========================================================= */
-
-@media screen and (orientation: landscape) and (max-width: 1200px) {
-
-    /* =====================================================
-       IMAGE ITEMS
-       ===================================================== */
-
-    .tree-view-item {
-        background: transparent !important;
-        border: 1px solid transparent !important;
-        border-radius: 6px !important;
-
-        color: #cbd1da !important;
-
-        transition:
-            background 0.12s ease,
-            border-color 0.12s ease,
-            color 0.12s ease;
-    }
-
-
-    /* Hover */
-    .tree-view-item:hover {
-        background: #252b34 !important;
-        border: 1px solid #343c49 !important;
-        color: #f0f2f5 !important;
-    }
-
-
-    /* =====================================================
-       HILANGKAN BINGKAI TITIK-TITIK
-       pada thumbnail / elemen gambar
-       ===================================================== */
-
-    .tree-view-item img {
-        border: none !important;
-        outline: none !important;
-    }
-
-    .tree-view-item * {
-        outline-color: transparent;
-    }
-
-
-    /* =====================================================
-       BUTTON TOOLBAR KIRI
-       ===================================================== */
-
-    .images-controllers .btn {
-        background: #282e38 !important;
-        color: #e5e9ef !important;
-
-        border: 1px solid #3b4451 !important;
-        border-radius: 7px !important;
-
-        box-shadow: none !important;
-
-        font-weight: 600;
-
-        transition:
-            background 0.12s ease,
-            border-color 0.12s ease,
-            transform 0.08s ease;
-    }
-
-
-    .images-controllers .btn:hover {
-        background: #323a46 !important;
-        border-color: #4b5665 !important;
-    }
-
-
-    .images-controllers .btn:active {
-        background: #3a4452 !important;
-        transform: scale(0.97);
-    }
-
-
-    /* =====================================================
-       TOMBOL HAPUS
-       ===================================================== */
-
-    .images-controllers .btn:nth-child(3) {
-        color: #ffb4b4 !important;
-    }
-
-
-    .images-controllers .btn:nth-child(3):hover {
-        background: #3a292d !important;
-        border-color: #71404a !important;
-    }
-
-
-}
-
-/* =========================================================
    MOBILE UI - IMAGE ITEM
    Selector asli dari ImagesTree.jsx
    Visual only
@@ -1421,19 +1321,89 @@
 }
 
 /* =========================================================
-   MOBILE UI - LEFT PANEL BUTTONS
-   Selector berdasarkan ImagesList.jsx
-   Visual only
-   Tidak mengubah layout / scroll
+   MOBILE UI - LEFT PANEL FINAL
+   Thumbnail + Toolbar
+   Berdasarkan struktur ImagesTree.jsx / ImagesList.jsx
    ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
+    /* =====================================================
+       THUMBNAIL IMAGE CONTAINER
+       Dotted border -> modern solid border
+       ===================================================== */
+
+    .image-list-image-container {
+        border: 1px solid #3b4451 !important;
+        border-radius: 5px !important;
+        background: #20252d !important;
+        box-sizing: border-box;
+    }
+
+    /* Thumbnail ketika item dipilih */
+    .image-list-item.back-400 .image-list-image-container {
+        border-color: #3182ce !important;
+    }
+
+    /* Thumbnail ketika item sedang aktif */
+    .image-list-item.image-list-item-current .image-list-image-container {
+        border-color: #3182ce !important;
+    }
+
+    /* Jangan beri border tambahan pada gambar itu sendiri */
+    .image-list-image {
+        border: none !important;
+        outline: none !important;
+    }
+
 
     /* =====================================================
-       SEMUA TOMBOL TOOLBAR KIRI
+       TOOLBAR KIRI
+       Jadikan 4 tombol sebagai grid 2 x 2
+       ===================================================== */
+
+    .images-controllers {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        box-sizing: border-box;
+    }
+
+    /*
+       Span pembungkus Tambah Gambar + Tambah ZIP
+       dibuat transparan terhadap grid.
+       Jadi keempat tombol bisa menjadi item grid.
+    */
+    .images-controllers > span {
+        display: contents;
+    }
+    
+        /* Hilangkan separator lama karena toolbar sekarang grid 2 x 2 */
+    .images-controllers > hr {
+        display: none !important;
+    }
+        /* =====================================================
+       TINGGI TOOLBAR 2 BARIS
+       ===================================================== */
+
+    .images-controllers {
+        height: 88px !important;
+        padding: 5px 3px !important;
+        align-content: stretch;
+    }
+
+    .images-tree {
+        top: 88px !important;
+    }
+
+
+    /* =====================================================
+       SEMUA TOMBOL
        ===================================================== */
 
     .images-controllers .btn {
+        width: 100%;
+        box-sizing: border-box;
+
         background: #282e38 !important;
         color: #e5e9ef !important;
 
@@ -1453,35 +1423,51 @@
 
 
     /* =====================================================
-       TAMBAH GAMBAR + TAMBAH ZIP
+       TAMBAH GAMBAR
        ===================================================== */
 
-    .images-controllers .file-upload {
+    .images-controllers .file-upload:nth-child(1) {
         background: #282e38 !important;
         color: #e5e9ef !important;
-
-        border-color: #3b4451 !important;
     }
 
-    .images-controllers .file-upload:hover {
-        background: #323a46 !important;
-        border-color: #4a5666 !important;
-    }
 
-    .images-controllers .file-upload:active {
-        background: #3a4452 !important;
-        transform: scale(0.97);
+    /* =====================================================
+       TAMBAH ZIP
+       ===================================================== */
+
+    .images-controllers .file-upload:nth-child(2) {
+        background: #282e38 !important;
+        color: #e5e9ef !important;
     }
 
 
     /* =====================================================
        HAPUS
+       Direct button pertama
+       ===================================================== */
+
+    .images-controllers > .btn:nth-of-type(1) {
+        background: #39292d !important;
+        color: #ffb4bd !important;
+        border-color: #5a3940 !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(1):hover {
+        background: #493037 !important;
+        border-color: #71404a !important;
+        color: #ffc3ca !important;
+    }
+
+
+    /* =====================================================
+       BERSIHKAN
+       Direct button kedua
        ===================================================== */
 
     .images-controllers > .btn:nth-of-type(2) {
         background: #39292d !important;
         color: #ffb4bd !important;
-
         border-color: #5a3940 !important;
     }
 
@@ -1491,31 +1477,29 @@
         color: #ffc3ca !important;
     }
 
-    .images-controllers > .btn:nth-of-type(2):active {
-        background: #57363e !important;
-        transform: scale(0.97);
-    }
-
 
     /* =====================================================
-       BERSIHKAN
+       HOVER TAMBAH GAMBAR / ZIP
        ===================================================== */
 
-    .images-controllers > .btn:nth-of-type(3) {
-        background: #282e38 !important;
-        color: #e5e9ef !important;
-
-        border-color: #3b4451 !important;
-    }
-
-    .images-controllers > .btn:nth-of-type(3):hover {
+    .images-controllers .file-upload:hover {
         background: #323a46 !important;
         border-color: #4a5666 !important;
     }
 
-    .images-controllers > .btn:nth-of-type(3):active {
+
+    /* =====================================================
+       PRESS / TOUCH
+       ===================================================== */
+
+    .images-controllers .btn:active {
         background: #3a4452 !important;
         transform: scale(0.97);
+    }
+
+    .images-controllers > .btn:nth-of-type(1):active,
+    .images-controllers > .btn:nth-of-type(2):active {
+        background: #57363e !important;
     }
 
 }
