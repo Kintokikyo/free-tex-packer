@@ -1270,3 +1270,61 @@
     }
 
 }
+
+/* =========================================================
+   MOBILE UI - LEFT IMAGE LIST
+   Visual only
+   Tidak mengubah layout / scroll
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* Setiap item gambar */
+    .tree-view-item {
+        background: transparent;
+        color: #cbd1da;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        transition:
+            background 0.12s ease,
+            border-color 0.12s ease,
+            color 0.12s ease;
+    }
+
+    /* Saat disentuh / hover */
+    .tree-view-item:hover {
+        background: #252b34;
+        border-color: #343c49;
+        color: #f0f2f5;
+    }
+
+    /* Saat item dipilih */
+    .tree-view-item.selected,
+    .tree-view-item.active {
+        background: #263c55;
+        border-color: #3182ce;
+        color: #ffffff;
+    }
+
+    /* Teks nama file */
+    .tree-view-item span {
+        color: inherit;
+    }
+
+    /* Tombol di bagian atas daftar */
+    .images-controllers .btn {
+        box-shadow: none;
+        font-weight: 600;
+    }
+
+    .images-controllers .btn:hover {
+        background: #303743;
+        border-color: #4b5665;
+    }
+
+    /* Area daftar gambar */
+    .images-tree {
+        background: #181c22;
+    }
+
+}
