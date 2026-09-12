@@ -1272,19 +1272,120 @@
 }
 
 /* =========================================================
-   MOBILE UI - LEFT IMAGE LIST
+   MOBILE UI - LEFT PANEL FINAL POLISH
    Visual only
    Tidak mengubah layout / scroll
    ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    /* Setiap item gambar */
+    /* =====================================================
+       IMAGE ITEMS
+       ===================================================== */
+
     .tree-view-item {
+        background: transparent !important;
+        border: 1px solid transparent !important;
+        border-radius: 6px !important;
+
+        color: #cbd1da !important;
+
+        transition:
+            background 0.12s ease,
+            border-color 0.12s ease,
+            color 0.12s ease;
+    }
+
+
+    /* Hover */
+    .tree-view-item:hover {
+        background: #252b34 !important;
+        border: 1px solid #343c49 !important;
+        color: #f0f2f5 !important;
+    }
+
+
+    /* =====================================================
+       HILANGKAN BINGKAI TITIK-TITIK
+       pada thumbnail / elemen gambar
+       ===================================================== */
+
+    .tree-view-item img {
+        border: none !important;
+        outline: none !important;
+    }
+
+    .tree-view-item * {
+        outline-color: transparent;
+    }
+
+
+    /* =====================================================
+       BUTTON TOOLBAR KIRI
+       ===================================================== */
+
+    .images-controllers .btn {
+        background: #282e38 !important;
+        color: #e5e9ef !important;
+
+        border: 1px solid #3b4451 !important;
+        border-radius: 7px !important;
+
+        box-shadow: none !important;
+
+        font-weight: 600;
+
+        transition:
+            background 0.12s ease,
+            border-color 0.12s ease,
+            transform 0.08s ease;
+    }
+
+
+    .images-controllers .btn:hover {
+        background: #323a46 !important;
+        border-color: #4b5665 !important;
+    }
+
+
+    .images-controllers .btn:active {
+        background: #3a4452 !important;
+        transform: scale(0.97);
+    }
+
+
+    /* =====================================================
+       TOMBOL HAPUS
+       ===================================================== */
+
+    .images-controllers .btn:nth-child(3) {
+        color: #ffb4b4 !important;
+    }
+
+
+    .images-controllers .btn:nth-child(3):hover {
+        background: #3a292d !important;
+        border-color: #71404a !important;
+    }
+
+
+}
+
+/* =========================================================
+   MOBILE UI - IMAGE ITEM
+   Selector asli dari ImagesTree.jsx
+   Visual only
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* Item gambar biasa */
+    .image-list-item {
         background: transparent;
         color: #cbd1da;
         border: 1px solid transparent;
         border-radius: 6px;
+
         transition:
             background 0.12s ease,
             border-color 0.12s ease,
@@ -1292,39 +1393,129 @@
     }
 
     /* Saat disentuh / hover */
-    .tree-view-item:hover {
+    .image-list-item:hover {
         background: #252b34;
         border-color: #343c49;
         color: #f0f2f5;
     }
 
-    /* Saat item dipilih */
-    .tree-view-item.selected,
-    .tree-view-item.active {
+    /* Gambar yang dipilih */
+    .image-list-item.back-400 {
         background: #263c55;
         border-color: #3182ce;
         color: #ffffff;
     }
 
-    /* Teks nama file */
-    .tree-view-item span {
+    /* Gambar yang sedang aktif */
+    .image-list-item.image-list-item-current {
+        background: #263c55;
+        border-color: #3182ce;
+        color: #ffffff;
+    }
+
+    /* Nama file */
+    .image-list-name-container {
         color: inherit;
     }
 
-    /* Tombol di bagian atas daftar */
+}
+
+/* =========================================================
+   MOBILE UI - LEFT PANEL BUTTONS
+   Selector berdasarkan ImagesList.jsx
+   Visual only
+   Tidak mengubah layout / scroll
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* =====================================================
+       SEMUA TOMBOL TOOLBAR KIRI
+       ===================================================== */
+
     .images-controllers .btn {
-        box-shadow: none;
+        background: #282e38 !important;
+        color: #e5e9ef !important;
+
+        border: 1px solid #3b4451 !important;
+        border-radius: 7px !important;
+
+        box-shadow: none !important;
+
         font-weight: 600;
+
+        transition:
+            background 0.12s ease,
+            border-color 0.12s ease,
+            color 0.12s ease,
+            transform 0.08s ease;
     }
 
-    .images-controllers .btn:hover {
-        background: #303743;
-        border-color: #4b5665;
+
+    /* =====================================================
+       TAMBAH GAMBAR + TAMBAH ZIP
+       ===================================================== */
+
+    .images-controllers .file-upload {
+        background: #282e38 !important;
+        color: #e5e9ef !important;
+
+        border-color: #3b4451 !important;
     }
 
-    /* Area daftar gambar */
-    .images-tree {
-        background: #181c22;
+    .images-controllers .file-upload:hover {
+        background: #323a46 !important;
+        border-color: #4a5666 !important;
+    }
+
+    .images-controllers .file-upload:active {
+        background: #3a4452 !important;
+        transform: scale(0.97);
+    }
+
+
+    /* =====================================================
+       HAPUS
+       ===================================================== */
+
+    .images-controllers > .btn:nth-of-type(2) {
+        background: #39292d !important;
+        color: #ffb4bd !important;
+
+        border-color: #5a3940 !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(2):hover {
+        background: #493037 !important;
+        border-color: #71404a !important;
+        color: #ffc3ca !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(2):active {
+        background: #57363e !important;
+        transform: scale(0.97);
+    }
+
+
+    /* =====================================================
+       BERSIHKAN
+       ===================================================== */
+
+    .images-controllers > .btn:nth-of-type(3) {
+        background: #282e38 !important;
+        color: #e5e9ef !important;
+
+        border-color: #3b4451 !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(3):hover {
+        background: #323a46 !important;
+        border-color: #4a5666 !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(3):active {
+        background: #3a4452 !important;
+        transform: scale(0.97);
     }
 
 }
