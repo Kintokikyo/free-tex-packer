@@ -1580,6 +1580,13 @@
         outline: none !important;
         box-shadow: none !important;
     }
+    
+    /* Hilangkan hanya garis pinggir tombol panel kiri */
+    .images-controllers .btn {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
 
     /* Warna item tetap dipertahankan */
     .image-list-item:hover {
@@ -1713,6 +1720,176 @@
 
     .results-view-footer input[type="checkbox"] {
         accent-color: #3182ce;
+    }
+
+}
+
+/* =========================================================
+   MOBILE - RIGHT PANEL MODERN
+   Visual only - tidak mengubah layout / sistem
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* Panel kanan */
+    .props-list {
+        background: #1b1f26 !important;
+        border: 1px solid #343b47 !important;
+        border-radius: 9px !important;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35) !important;
+        color: #e5e9ef !important;
+    }
+
+    /* Isi panel */
+    .pack-properties-containter {
+        background: #1b1f26 !important;
+        color: #e5e9ef !important;
+    }
+
+    /* Tabel pengaturan */
+    .pack-properties-containter table {
+        color: #e5e9ef !important;
+    }
+
+    /* Label kiri */
+    .pack-properties-containter td:first-child {
+        color: #d5dae2 !important;
+        font-weight: 600;
+    }
+
+    /* Semua input */
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"] {
+        background: #20252d !important;
+        color: #e5e9ef !important;
+        border: 1px solid #343c49 !important;
+        border-radius: 7px !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18) !important;
+    }
+
+    /* Select */
+    .pack-properties-containter td > select {
+        background: #20252d !important;
+        color: #e5e9ef !important;
+        border: 1px solid #343c49 !important;
+        border-radius: 7px !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18) !important;
+    }
+
+    /* Fokus input/select */
+    .pack-properties-containter td > input[type="text"]:focus,
+    .pack-properties-containter td > input[type="number"]:focus,
+    .pack-properties-containter td > select:focus {
+        outline: none !important;
+        border-color: #3182ce !important;
+        box-shadow: 0 0 0 1px #3182ce !important;
+    }
+
+    /* Placeholder */
+    .pack-properties-containter input::placeholder {
+        color: #7f8997 !important;
+    }
+
+    /* Checkbox -> toggle switch */
+    .pack-properties-containter input[type="checkbox"] {
+        appearance: none !important;
+        -webkit-appearance: none !important;
+
+        width: 38px !important;
+        height: 20px !important;
+
+        margin: 0 !important;
+
+        background: #28313d !important;
+        border: 1px solid #3b4655 !important;
+        border-radius: 20px !important;
+
+        position: relative;
+        vertical-align: middle;
+
+        cursor: pointer;
+
+        transition:
+            background 0.15s ease,
+            border-color 0.15s ease;
+    }
+
+    /* Lingkaran toggle */
+    .pack-properties-containter input[type="checkbox"]::before {
+        content: "";
+        position: absolute;
+
+        width: 14px;
+        height: 14px;
+
+        top: 2px;
+        left: 2px;
+
+        background: #b8c0cc;
+        border-radius: 50%;
+
+        transition: transform 0.15s ease;
+    }
+
+    /* Toggle aktif */
+    .pack-properties-containter input[type="checkbox"]:checked {
+        background: #3182ce !important;
+        border-color: #3182ce !important;
+    }
+
+    .pack-properties-containter input[type="checkbox"]:checked::before {
+        transform: translateX(18px);
+        background: #ffffff;
+    }
+
+    /* Fokus toggle */
+    .pack-properties-containter input[type="checkbox"]:focus {
+        outline: none !important;
+        box-shadow: 0 0 0 1px #3182ce !important;
+    }
+
+    /* Tombol umum di panel kanan */
+    .props-list .btn {
+        background: #282e38 !important;
+        color: #e5e9ef !important;
+        border: 1px solid #3b4451 !important;
+        border-radius: 7px !important;
+        box-shadow: none !important;
+    }
+
+    .props-list .btn:hover {
+        background: #323a46 !important;
+        border-color: #4a5666 !important;
+    }
+
+    .props-list .btn:active {
+        background: #3a4452 !important;
+    }
+
+}
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .props-list .btn-export,
+    .props-list button[type="submit"] {
+        background: #1677e8 !important;
+        color: #ffffff !important;
+        border-color: #1677e8 !important;
+        border-radius: 7px !important;
+        font-weight: 700;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .props-list .btn-export:hover,
+    .props-list button[type="submit"]:hover {
+        background: #2585f0 !important;
+        border-color: #2585f0 !important;
+    }
+
+    .props-list .btn-export:active,
+    .props-list button[type="submit"]:active {
+        background: #0f68d1 !important;
+        transform: scale(0.98);
     }
 
 }
