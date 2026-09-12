@@ -1503,3 +1503,72 @@
     }
 
 }
+/* =========================================================
+   MOBILE UI - LEFT BUTTON FINAL SIZE
+   Merapikan tinggi tombol toolbar kiri
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* =====================================================
+       UKURAN TOMBOL
+       ===================================================== */
+
+    .images-controllers .btn {
+        min-height: 0 !important;
+        height: 34px !important;
+
+        padding: 5px 6px !important;
+
+        line-height: 1.1 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       GRID 2 x 2
+       ===================================================== */
+
+    .images-controllers {
+        grid-template-rows: 34px 34px !important;
+        grid-auto-rows: 34px !important;
+
+        align-content: start !important;
+        row-gap: 4px !important;
+    }
+
+
+    /* =====================================================
+       HAPUS
+       Merah gelap
+       ===================================================== */
+
+    .images-controllers > .btn:nth-of-type(1) {
+        background: #39292d !important;
+        border-color: #5a3940 !important;
+        color: #ffb4bd !important;
+    }
+
+
+    /* =====================================================
+       BERSIHKAN
+       Lebih merah karena menghapus seluruh list
+       ===================================================== */
+
+    .images-controllers > .btn:nth-of-type(2) {
+        background: #4a2930 !important;
+        border-color: #7a3f49 !important;
+        color: #ffc0c7 !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(2):hover {
+        background: #5a3039 !important;
+        border-color: #96505b !important;
+        color: #ffd0d5 !important;
+    }
+
+    .images-controllers > .btn:nth-of-type(2):active {
+        background: #673640 !important;
+    }
+
+}
