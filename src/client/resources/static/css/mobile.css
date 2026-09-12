@@ -2356,14 +2356,19 @@
 }
 
 /* =========================================================
-   FIX TOGGLE CHECKBOX
-   Kembalikan checkbox menjadi switch 38x20
+   FINAL FIX - TOGGLE SWITCH
+   Selector dibuat sama spesifik dengan aturan kolom kontrol
    ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    /* Ukuran badan toggle */
-    .pack-properties-containter input[type="checkbox"] {
+    /* =====================================================
+       TOGGLE OFF
+       ===================================================== */
+
+    .pack-properties-containter
+    td:nth-child(2)
+    > input[type="checkbox"] {
 
         appearance: none !important;
         -webkit-appearance: none !important;
@@ -2377,84 +2382,101 @@
         max-height: 20px !important;
 
         margin: 0 !important;
-
         padding: 0 !important;
 
         box-sizing: border-box !important;
-
-        background: #28313d !important;
 
         border: 1px solid #3b4655 !important;
 
         border-radius: 20px !important;
 
+        background-color: #28313d !important;
+
+        /*
+         * Lingkaran OFF berada di kiri.
+         */
+        background-image:
+            radial-gradient(
+                circle 7px at 10px 50%,
+                #b8c0cc 0 7px,
+                transparent 7.5px
+            ) !important;
+
+        background-repeat: no-repeat !important;
+
         position: relative !important;
 
         vertical-align: middle !important;
 
-        cursor: pointer;
+        cursor: pointer !important;
 
         transition:
-            background 0.15s ease,
-            border-color 0.15s ease;
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            background-position 0.15s ease !important;
     }
 
 
-    /* Lingkaran putih/abu-abu */
-    .pack-properties-containter input[type="checkbox"]::before {
+    /* =====================================================
+       TOGGLE ON
+       ===================================================== */
 
-        content: "" !important;
+    .pack-properties-containter
+    td:nth-child(2)
+    > input[type="checkbox"]:checked {
 
-        position: absolute !important;
+        width: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
 
-        width: 14px !important;
-        min-width: 14px !important;
-        max-width: 14px !important;
+        height: 20px !important;
+        min-height: 20px !important;
+        max-height: 20px !important;
 
-        height: 14px !important;
-        min-height: 14px !important;
-        max-height: 14px !important;
-
-        top: 2px !important;
-        left: 2px !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        background: #b8c0cc !important;
-
-        border-radius: 50% !important;
-
-        transform: translateX(0) !important;
-
-        transition: transform 0.15s ease;
-    }
-
-
-    /* Toggle aktif / ON */
-    .pack-properties-containter input[type="checkbox"]:checked {
-
-        background: #3182ce !important;
+        background-color: #3182ce !important;
 
         border-color: #3182ce !important;
+
+        /*
+         * Lingkaran ON berpindah ke kanan.
+         */
+        background-image:
+            radial-gradient(
+                circle 7px at 28px 50%,
+                #ffffff 0 7px,
+                transparent 7.5px
+            ) !important;
+
+        background-repeat: no-repeat !important;
     }
 
 
-    /* Lingkaran pindah ke kanan */
-    .pack-properties-containter input[type="checkbox"]:checked::before {
+    /* =====================================================
+       MATIKAN PSEUDO-ELEMENT LAMA
+       ===================================================== */
 
-        transform: translateX(18px) !important;
+    .pack-properties-containter
+    td:nth-child(2)
+    > input[type="checkbox"]::before {
 
-        background: #ffffff !important;
+        content: none !important;
+
+        display: none !important;
     }
 
 
-    /* Fokus */
-    .pack-properties-containter input[type="checkbox"]:focus {
+    /* =====================================================
+       FOCUS
+       ===================================================== */
+
+    .pack-properties-containter
+    td:nth-child(2)
+    > input[type="checkbox"]:focus {
 
         outline: none !important;
 
-        box-shadow: 0 0 0 1px #3182ce !important;
+        box-shadow:
+            0 0 0 1px #3182ce !important;
     }
 
 }
