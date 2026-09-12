@@ -1083,27 +1083,30 @@
 }
 
 /* =========================================================
-   MOBILE - PROPERTY INPUT FIT
-   Visual/size only, tidak mengubah sistem layout
+   MOBILE - VISUAL ONLY
+   Tidak mengubah layout / scroll
    ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    .pack-properties-containter td:last-child {
-        min-width: 0;
+    /* Drop area kiri */
+    .image-drop-help {
+        background: #2b2b2b;
+        color: #bdbdbd;
+        border: 1px solid #454545;
     }
 
-    .pack-properties-containter td > input[type="text"],
-    .pack-properties-containter td > input[type="number"],
-    .pack-properties-containter td > select {
-        min-width: 0;
-        max-width: 100%;
+    /* Toolbar preview bawah */
+    .results-view-footer {
+        background: #202020;
+        color: #dedede;
+        border-top: 1px solid #383838;
     }
 
 }
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
-
+    /* Area Preview  */
     .results-view-container {
         background: #2b2b2b;
     }
