@@ -1039,7 +1039,7 @@
        SCROLLBAR
        ===================================================== */
 
-    * {
+   /* * {
         scrollbar-width: thin;
 
         scrollbar-color:
@@ -1068,7 +1068,7 @@
 
     *::-webkit-scrollbar-thumb:hover {
         background: #5a5a5a;
-    }
+    } */
 
 
     /* =====================================================
@@ -1106,14 +1106,6 @@
     /* Area Preview  */
     .results-view-container {
         background: #2b2b2b;
-    }
-
-}
-
-@media screen and (orientation: landscape) and (max-width: 1200px) {
-
-    .pack-properties-containter td:last-child {
-        padding-right: 12px;
     }
 
 }
