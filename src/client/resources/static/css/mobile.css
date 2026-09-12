@@ -1572,3 +1572,147 @@
     }
 
 }
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* Hilangkan hanya garis pinggir item/nama file */
+    .image-list-item {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Warna item tetap dipertahankan */
+    .image-list-item:hover {
+        background: #252b34;
+        color: #f0f2f5;
+    }
+
+    .image-list-item.back-400,
+    .image-list-item.image-list-item-current {
+        background: #263c55;
+        color: #ffffff;
+        border: none !important;
+    }
+
+    /* Kotak thumbnail TETAP ada */
+    .image-list-image-container {
+        border: 1px solid #3b4451 !important;
+        border-radius: 5px !important;
+        background: #20252d !important;
+        box-sizing: border-box;
+    }
+
+    /* Thumbnail yang dipilih tetap biru */
+    .image-list-item.back-400 .image-list-image-container,
+    .image-list-item.image-list-item-current .image-list-image-container {
+        border-color: #3182ce !important;
+    }
+
+}
+
+/* =========================================================
+   MOBILE UI - CENTER PREVIEW
+   Visual only
+   Tidak mengubah canvas / sistem preview
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+
+    /* =====================================================
+       PANEL UTAMA
+       ===================================================== */
+
+    .results-view {
+        background: #1b1f26 !important;
+        border: 1px solid #343b47 !important;
+        border-radius: 9px !important;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35) !important;
+    }
+
+
+    /* =====================================================
+       WRAPPER
+       ===================================================== */
+
+    .results-view-wrapper {
+        background: #20252d !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       AREA PREVIEW
+       ===================================================== */
+
+    .results-view-container {
+        background: #252a32 !important;
+    }
+
+
+    /* =====================================================
+       TEXTURE VIEW
+       ===================================================== */
+
+    .texture-view {
+        background: #252a32 !important;
+        border-radius: 6px;
+    }
+
+
+    /* =====================================================
+       TOOLBAR BAWAH PREVIEW
+       ===================================================== */
+
+    .results-view-footer {
+        background: #1b1f26 !important;
+        border-top: 1px solid #343b47 !important;
+        color: #e5e9ef !important;
+    }
+
+
+    /* =====================================================
+       BUTTON DI TOOLBAR PREVIEW
+       ===================================================== */
+
+    .results-view-footer .btn {
+        background: #282e38 !important;
+        color: #e5e9ef !important;
+
+        border: 1px solid #3b4451 !important;
+        border-radius: 7px !important;
+
+        box-shadow: none !important;
+    }
+
+    .results-view-footer .btn:hover {
+        background: #323a46 !important;
+        border-color: #4a5666 !important;
+    }
+
+    .results-view-footer .btn:active {
+        background: #3a4452 !important;
+    }
+
+
+    /* =====================================================
+       BACKGROUND COLOR BUTTON
+       ===================================================== */
+
+    .results-view-footer .btn-back-color {
+        border: 1px solid #3b4451 !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       CHECKBOX
+       ===================================================== */
+
+    .results-view-footer input[type="checkbox"] {
+        accent-color: #3182ce;
+    }
+
+}
