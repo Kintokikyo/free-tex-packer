@@ -21,6 +21,7 @@ class OffsetEditor extends React.Component {
         this.handleOffsetXChange = this.handleOffsetXChange.bind(this);
         this.handleOffsetYChange = this.handleOffsetYChange.bind(this);
         this.handleApplyOffset = this.handleApplyOffset.bind(this);
+        this.handleResetOffset = this.handleResetOffset.bind(this);
 
         Observer.on(
             GLOBAL_EVENT.IMAGES_LIST_CHANGED,
@@ -138,7 +139,6 @@ class OffsetEditor extends React.Component {
 
     handleApplyOffset() {
     let stateName = this.state.selectedState;
-
     if(!stateName) {
         return;
     }
@@ -168,6 +168,30 @@ class OffsetEditor extends React.Component {
         offsetY: String(y)
     });
         
+    Observer.emit(
+        GLOBAL_EVENT.OFFSETS_CHANGED,
+        offsets
+    );
+    }
+
+    handleResetOffset() {
+    let stateName = this.state.selectedState;
+    if(!stateName) {
+        return;
+    }
+
+    let offsets = {
+        ...this.state.offsets
+    };
+
+    delete offsets[stateName];
+
+    this.setState({
+        offsets: offsets,
+        offsetX: "0",
+        offsetY: "0"
+    });
+
     Observer.emit(
         GLOBAL_EVENT.OFFSETS_CHANGED,
         offsets
@@ -260,6 +284,16 @@ class OffsetEditor extends React.Component {
                         marginTop: "8px"
                     }}>
                     Terapkan
+                </button>
+
+                <button
+                    type="button"
+                    onClick={this.handleResetOffset}
+                    style={{
+                        width: "100%",
+                        marginTop: "5px"
+                    }}>
+                    Hapus Offset
                 </button>
 
             </div>
