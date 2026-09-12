@@ -689,7 +689,7 @@
 }
 
 /* =========================================================
-   MOBILE UI - GODOT DARK THEME
+   MOBILE UI - DARK THEME
    Free Texture Packer 0.6.7
    ========================================================= */
 
@@ -1039,7 +1039,7 @@
        SCROLLBAR
        ===================================================== */
 
-   /* * {
+    * {
         scrollbar-width: thin;
 
         scrollbar-color:
@@ -1068,7 +1068,7 @@
 
     *::-webkit-scrollbar-thumb:hover {
         background: #5a5a5a;
-    } */
+    }
 
 
     /* =====================================================
@@ -1106,6 +1106,20 @@
     /* Area Preview  */
     .results-view-container {
         background: #2b2b2b;
+    }
+
+}
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .pack-properties-containter td:last-child {
+        min-width: 108px;
+    }
+
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"],
+    .pack-properties-containter td > select {
+        min-width: 108px;
     }
 
 }
