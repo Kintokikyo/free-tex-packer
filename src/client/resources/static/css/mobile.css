@@ -1102,13 +1102,20 @@
         color: #dedede;
         border-top: 1px solid #383838;
     }
+    
+    /* Area Preview  */
+    .results-view-container {
+        background: #2b2b2b;
+    }
 
 }
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
-    /* Area Preview  */
-    .results-view-container {
-        background: #2b2b2b;
+
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"],
+    .pack-properties-containter td > select {
+        width: calc(100% - 8px);
     }
 
 }
