@@ -97,6 +97,13 @@ function prepareData(data, options) {
             sourceSize.h = spriteSourceSize.h;
         }
 
+        let sourceColorRect = {
+            x: spriteSourceSize.x,
+            y: spriteSourceSize.y,
+            w: spriteSourceSize.w,
+            h: spriteSourceSize.h
+        };
+
         let frameName = item.originalFile || item.file;
         frameName = frameName
             .split("/")
@@ -147,6 +154,7 @@ function prepareData(data, options) {
             name: name,
             frame: frame,
             spriteSourceSize: spriteSourceSize,
+            sourceColorRect: sourceColorRect,
             sourceSize: sourceSize,
             rotated: item.rotated,
             trimmed: trimmed, 
