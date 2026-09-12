@@ -156,7 +156,6 @@ class OffsetEditor extends React.Component {
 
     let offsets = {
         ...this.state.offsets,
-
         [stateName]: {
             x: x,
             y: y
@@ -168,6 +167,11 @@ class OffsetEditor extends React.Component {
         offsetX: String(x),
         offsetY: String(y)
     });
+        
+    Observer.emit(
+        GLOBAL_EVENT.OFFSETS_CHANGED,
+        offsets
+    );
     }
 
     render() {
