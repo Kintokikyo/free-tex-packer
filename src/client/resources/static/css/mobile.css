@@ -1112,11 +1112,8 @@
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    .pack-properties-containter td > input[type="text"],
-    .pack-properties-containter td > input[type="number"],
-    .pack-properties-containter td > select {
-        width: calc(100% - 10px) !important;
-        max-width: calc(100% - 10px) !important;
+    .pack-properties-containter td:last-child {
+        padding-right: 12px;
     }
 
 }
