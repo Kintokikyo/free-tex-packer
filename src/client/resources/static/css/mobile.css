@@ -1083,199 +1083,29 @@
 }
 
 /* =========================================================
-   UI REFINEMENT - PANEL / CARD
+   MOBILE - PROPERTY INPUT FIT
+   Visual/size only, tidak mengubah sistem layout
    ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    /* -----------------------------------------------------
-       MAIN PANEL SPACING
-       ----------------------------------------------------- */
-
-    .main-layout {
-        padding-left: 7px;
-        padding-right: 7px;
-        column-gap: 6px;
+    .pack-properties-containter td:last-child {
+        min-width: 0;
     }
 
-
-    /* -----------------------------------------------------
-       PANELS
-       ----------------------------------------------------- */
-
-    .images-list,
-    .results-view,
-    .props-list {
-
-        background: #202020;
-
-        border: 1px solid #3a3a3a;
-
-        border-radius: 10px;
-
-        box-shadow:
-            0 2px 5px rgba(0, 0, 0, 0.35);
-
-        overflow: hidden;
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"],
+    .pack-properties-containter td > select {
+        min-width: 0;
+        max-width: 100%;
     }
 
+}
 
-    /* -----------------------------------------------------
-       LEFT PANEL
-       ----------------------------------------------------- */
+@media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    .images-list {
-        padding: 7px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* -----------------------------------------------------
-       CENTER PANEL
-       ----------------------------------------------------- */
-
-    .results-view {
-        padding: 7px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* -----------------------------------------------------
-       RIGHT PANEL
-       ----------------------------------------------------- */
-
-    .props-list {
-        padding: 7px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* -----------------------------------------------------
-       PANEL CONTENT DIVIDERS
-       ----------------------------------------------------- */
-
-    .images-list hr,
-    .results-view hr,
-    .props-list hr {
-
-        border: 0;
-
-        border-top: 1px solid #363636;
-
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-
-    /* -----------------------------------------------------
-       TEXT
-       ----------------------------------------------------- */
-
-    .images-list,
-    .results-view,
-    .props-list {
-
-        font-size: 12px;
-
-        color: #dedede;
-    }
-
-
-    /* -----------------------------------------------------
-       BUTTON GROUP SPACING
-       ----------------------------------------------------- */
-
-    .images-list button {
-        margin: 2px;
-    }
-
-
-    /* -----------------------------------------------------
-       INPUT SPACING
-       ----------------------------------------------------- */
-
-    .props-list input,
-    .props-list select {
-
-        margin-top: 2px;
-        margin-bottom: 4px;
-    }
-
-
-    /* -----------------------------------------------------
-       SETTINGS LABELS
-       ----------------------------------------------------- */
-
-    .props-list label {
-
-        color: #d4d4d4;
-    }
-
-
-    /* -----------------------------------------------------
-       SCROLL AREA
-       ----------------------------------------------------- */
-
-    .props-list {
-
-        scrollbar-gutter: stable;
-    }
-
-
-    /* -----------------------------------------------------
-       SUB-PANELS
-       ----------------------------------------------------- */
-
-    .props-list fieldset {
-
-        background: #252525;
-
-        border: 1px solid #383838;
-
-        border-radius: 7px;
-
-        margin-top: 6px;
-        margin-bottom: 6px;
-
-        padding: 7px;
-    }
-
-
-    .props-list legend {
-
-        color: #e5e5e5;
-
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-
-    /* -----------------------------------------------------
-       HOVER
-       ----------------------------------------------------- */
-
-    .images-list button:hover,
-    .props-list button:hover {
-
-        border-color: #555555;
-
-        background: #383838;
-    }
-
-
-    /* -----------------------------------------------------
-       FOCUS
-       ----------------------------------------------------- */
-
-    .images-list button:focus,
-    .props-list button:focus {
-
-        outline: none;
-
-        border-color: #478cbf;
+    .results-view-container {
+        background: #2b2b2b;
     }
 
 }
