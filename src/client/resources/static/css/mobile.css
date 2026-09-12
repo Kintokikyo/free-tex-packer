@@ -1909,8 +1909,8 @@
          */
         grid-template-columns:
             minmax(0, 24%)
-            minmax(0, 46%)
-            minmax(0, 30%) !important;
+            minmax(0, 48%)
+            minmax(0, 28%) !important;
 
         column-gap: 4px !important;
 
@@ -2203,6 +2203,155 @@
         margin: 0 !important;
 
         vertical-align: middle !important;
+    }
+
+}
+
+/* =========================================================
+   FIX PROPERTY TABLE COLUMNS
+   Kolom kontrol jangan sampai gepeng
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* -----------------------------------------
+       KOLOM LABEL
+       ----------------------------------------- */
+
+    .pack-properties-containter td:first-child {
+        width: 42% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       KOLOM KONTROL
+       SELECT / INPUT / CHECKBOX
+       ----------------------------------------- */
+
+    .pack-properties-containter td:nth-child(2) {
+        width: auto !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       KOLOM KETIGA
+       Biasanya berisi tombol Edit atau kosong
+       ----------------------------------------- */
+
+    .pack-properties-containter td:nth-child(3) {
+        width: 22px !important;
+        min-width: 22px !important;
+        max-width: 22px !important;
+
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       INPUT
+       ----------------------------------------- */
+
+    .pack-properties-containter td:nth-child(2) > input[type="text"],
+    .pack-properties-containter td:nth-child(2) > input[type="number"],
+    .pack-properties-containter td:nth-child(2) > input[type="password"] {
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       SELECT
+       ----------------------------------------- */
+
+    .pack-properties-containter td:nth-child(2) > select {
+
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       CHECKBOX
+       Jangan ikut melebar/gepeng
+       ----------------------------------------- */
+
+    .pack-properties-containter td:nth-child(2) > input[type="checkbox"] {
+
+        width: 16px !important;
+        min-width: 16px !important;
+        max-width: 16px !important;
+
+        height: 16px !important;
+        min-height: 16px !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        vertical-align: middle !important;
+    }
+
+
+    /* -----------------------------------------
+       TOMBOL EDIT
+       ----------------------------------------- */
+
+    .pack-properties-containter td:nth-child(3) .edit-btn {
+
+        width: 16px !important;
+        min-width: 16px !important;
+        max-width: 16px !important;
+
+        height: 16px !important;
+        min-height: 16px !important;
+        max-height: 16px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       BARIS EKSPOR
+       Ini pengecualian karena colspan="3"
+       ----------------------------------------- */
+
+    .pack-properties-containter td[colspan="3"] {
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        padding: 2px !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+    }
+
+
+    .pack-properties-containter td[colspan="3"] .btn {
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
     }
 
 }
