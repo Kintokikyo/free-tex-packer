@@ -687,3 +687,166 @@
         font-size: 10px;
     }
 }
+
+/* =========================================
+   MOBILE DARK UI
+   Free Texture Packer
+   ========================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    html,
+    body {
+        background: #0b1220;
+        color: #e6edf7;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .main-header {
+        background: #111a29;
+        border-bottom: 1px solid #24344d;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+
+    /* =========================
+       MAIN PANELS
+       ========================= */
+
+    .images-list,
+    .results-view,
+    .props-list {
+        background: #111c2d;
+        border: 1px solid #263a57;
+        border-radius: 9px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.30);
+    }
+
+
+    /* =========================
+       BUTTON
+       ========================= */
+
+    button {
+        border-radius: 7px;
+        border: 1px solid #334a68;
+        background: #1b2b42;
+        color: #e8eef7;
+        transition: background 0.15s ease;
+    }
+
+    button:hover {
+        background: #243a58;
+    }
+
+    button:active {
+        background: #2b4669;
+    }
+
+
+    /* =========================
+       INPUT
+       ========================= */
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    select {
+        background: #17263a;
+        color: #e6edf7;
+        border: 1px solid #344b69;
+        border-radius: 6px;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+        border-color: #2388ff;
+        outline: none;
+        box-shadow: 0 0 0 1px #2388ff;
+    }
+
+
+    /* =========================
+       CHECKBOX
+       ========================= */
+
+    input[type="checkbox"] {
+        accent-color: #1683ff;
+    }
+
+
+    /* =========================
+       FILE LIST
+       ========================= */
+
+    .images-list {
+        color: #dbe5f2;
+    }
+
+
+    /* =========================
+       SCROLLBAR
+       ========================= */
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #334a68 #111c2d;
+    }
+
+    *::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #111c2d;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: #334a68;
+        border-radius: 10px;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background: #456284;
+    }
+
+
+    /* =========================
+       PROPERTIES
+       ========================= */
+
+    .pack-properties-containter {
+        color: #dbe5f2;
+    }
+
+    .pack-properties-containter table {
+        color: #dbe5f2;
+    }
+
+
+    /* =========================
+       OFFSET STATE
+       ========================= */
+
+    .offset-editor {
+        background: #16243a;
+        border: 1px solid #2a405d;
+        border-radius: 8px;
+    }
+
+
+    /* =========================
+       LINKS
+       ========================= */
+
+    a {
+        color: #62aaff;
+    }
+
+}
