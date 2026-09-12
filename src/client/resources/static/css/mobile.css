@@ -1763,6 +1763,9 @@
         color: #e5e9ef !important;
         border: 1px solid #343c49 !important;
         border-radius: 7px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: block;
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18) !important;
     }
 
@@ -1870,27 +1873,36 @@
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
     /* Tombol Ekspor panel kanan */
-    .pack-properties-containter table tr td.center-align > .btn {
-        width: 100%;
-        background: #3182ce !important;
+    .pack-properties-containter .btn {
+        width: 100% !important;
+        box-sizing: border-box !important;
+
+        background: #2e9b5f !important;
+        border: 1px solid #3bbf76 !important;
         color: #ffffff !important;
-        border: none !important;
-        outline: none !important;
-        box-shadow: none !important;
+
         border-radius: 7px !important;
-        font-weight: 700;
-        box-sizing: border-box;
+
+        /* Teks benar-benar di tengah */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        text-align: center !important;
+
+        padding: 7px 8px !important;
+        line-height: 1.1 !important;
+
+        box-shadow: none !important;
     }
 
-    .pack-properties-containter table tr td.center-align > .btn:hover {
-        background: #3b8edb !important;
-        border: none !important;
+    .pack-properties-containter .btn:hover {
+        background: #35ad6a !important;
+        border-color: #4bce84 !important;
     }
 
-    .pack-properties-containter table tr td.center-align > .btn:active {
-        background: #2874b8 !important;
-        border: none !important;
-        transform: scale(0.98);
+    .pack-properties-containter .btn:active {
+        background: #278650 !important;
     }
 
 }
