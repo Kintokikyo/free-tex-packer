@@ -1,4 +1,692 @@
+/* =========================================================
+   FREE TEXTURE PACKER
+   Android Landscape - Desktop Style
+   ========================================================= */
 
+
+/* =========================================================
+   MAIN LANDSCAPE LAYOUT
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 12px;
+    }
+
+    .main-container {
+        width: 100%;
+        height: 100%;
+        min-width: 0 !important;
+        min-height: 0 !important;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        height: 100%;
+        min-width: 0 !important;
+        min-height: 0 !important;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .main-header {
+        width: 100%;
+        height: 56px;
+
+        padding-left: 8px;
+        padding-right: 8px;
+
+        line-height: 56px;
+
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+    .main-header-app-name {
+        font-size: 17px;
+        white-space: nowrap;
+    }
+
+    .main-header-app-name img {
+        max-height: 42px;
+        width: auto;
+
+        vertical-align: middle;
+
+        margin-right: 5px;
+    }
+
+    .main-header-controls {
+        margin-right: 5px;
+    }
+
+    .main-header-language {
+        font-size: 12px;
+    }
+
+    .main-header-language select {
+        width: 90px;
+        height: 30px;
+
+        margin-left: 5px;
+        margin-right: 5px;
+
+        padding: 2px 4px;
+
+        box-sizing: border-box;
+
+        font-size: 12px;
+    }
+
+    .main-header-about {
+        font-size: 17px;
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+
+    /* =====================================================
+       MAIN LAYOUT
+       ===================================================== */
+
+    .main-layout {
+        width: 100%;
+
+        height: calc(100% - 66px);
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 25%)
+            minmax(0, 50%)
+            minmax(0, 25%);
+
+        column-gap: 4px;
+
+        align-items: stretch;
+    }
+
+
+    /* =====================================================
+       LEFT PANEL - IMAGES
+       ===================================================== */
+
+    .images-list {
+        position: relative;
+
+        width: auto !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0;
+
+        float: none !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .images-controllers {
+        width: 100%;
+
+        height: 43px;
+
+        padding: 5px 3px;
+
+        box-sizing: border-box;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-align: left;
+    }
+
+    .images-controllers .btn {
+        margin-left: 1px;
+        margin-right: 1px;
+
+        padding: 7px 8px;
+
+        min-height: 0;
+
+        font-size: 11px;
+
+        line-height: 1;
+
+        box-sizing: border-box;
+    }
+
+    .images-controllers hr {
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    .images-tree {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        top: 43px;
+        bottom: 0;
+
+        width: auto;
+
+        padding: 6px;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .image-drop-help {
+        width: calc(100% - 20px);
+
+        max-width: 250px;
+
+        padding: 24px 8px;
+
+        margin: 35px auto;
+
+        box-sizing: border-box;
+
+        font-size: 11px;
+    }
+
+    .tree-view-item {
+        line-height: 17px;
+
+        padding-top: 2px;
+        padding-bottom: 4px;
+    }
+
+
+    /* =====================================================
+       CENTER PANEL - PREVIEW
+       ===================================================== */
+
+    .results-view {
+        position: relative;
+
+        width: auto !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0;
+
+        float: none !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .results-view-wrapper {
+        width: 100% !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box;
+
+        box-shadow: none;
+    }
+
+    .results-view-container {
+        width: 100% !important;
+
+        height: calc(100% - 48px) !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box;
+
+        overflow: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+        text-align: center;
+    }
+
+    .texture-view {
+        margin: 5px;
+    }
+
+    .texture-view canvas {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+    }
+
+    .results-view-footer {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 48px;
+
+        padding: 6px 4px;
+
+        box-sizing: border-box;
+
+        white-space: nowrap;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        text-align: center;
+    }
+
+    .results-view-footer .btn {
+        margin-left: 2px;
+        margin-right: 2px;
+
+        padding: 7px 8px;
+
+        min-height: 0;
+
+        font-size: 11px;
+
+        line-height: 1;
+    }
+
+    .results-view-footer .btn-back-color {
+        width: 22px;
+        height: 22px;
+
+        margin-right: 4px;
+
+        vertical-align: middle;
+    }
+
+
+    /* =====================================================
+       RIGHT PANEL - PROPERTIES
+       ===================================================== */
+
+    .props-list {
+        position: relative;
+
+        width: auto !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0;
+
+        float: none !important;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .pack-properties-containter {
+        width: 100%;
+
+        padding: 5px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------------------
+       IMPORTANT:
+       Jangan menggunakan table-layout: fixed.
+       Biarkan tabel menentukan lebar kolom seperti versi PC.
+       ----------------------------------------------------- */
+
+    .pack-properties-containter table {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        table-layout: auto;
+    }
+
+    .pack-properties-containter td {
+        padding: 2px;
+
+        font-size: 11px;
+
+        box-sizing: border-box;
+
+        white-space: nowrap;
+    }
+
+    .pack-properties-containter td:first-child {
+        width: 42%;
+    }
+
+    .pack-properties-containter td:last-child {
+        width: 58%;
+
+        min-width: 125px;
+    }
+
+
+    /* -----------------------------------------------------
+       TEXT INPUT
+       ----------------------------------------------------- */
+
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"] {
+        display: block;
+
+        width: 100%;
+
+        min-width: 125px;
+
+        height: 28px;
+
+        padding: 3px 5px;
+
+        box-sizing: border-box;
+
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       SELECT
+       ----------------------------------------------------- */
+
+    .pack-properties-containter td > select {
+        display: block;
+
+        width: 100%;
+
+        min-width: 125px;
+
+        height: 28px;
+
+        padding: 3px 5px;
+
+        box-sizing: border-box;
+
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       CHECKBOX
+       ----------------------------------------------------- */
+
+    .pack-properties-containter input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+
+        margin: 0;
+
+        vertical-align: middle;
+    }
+
+
+    /* =====================================================
+       GENERAL BUTTONS
+       ===================================================== */
+
+    .btn {
+        min-height: 0;
+
+        padding: 7px 9px;
+
+        font-size: 11px;
+
+        line-height: 1;
+
+        box-sizing: border-box;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:active {
+        transform: scale(0.96);
+    }
+
+    .file-upload {
+        min-height: 0;
+    }
+
+
+    /* =====================================================
+       MESSAGE BOX
+       ===================================================== */
+
+    .message-box-window {
+        width: min(340px, 75vw);
+
+        height: auto;
+
+        max-height: 75vh;
+
+        margin-top: 8vh;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+
+        font-size: 13px;
+
+        overflow: hidden;
+    }
+
+    .message-box-content {
+        height: auto;
+
+        max-height: 45vh;
+
+        overflow-y: auto;
+    }
+
+    .message-box-buttons {
+        padding: 6px 4px;
+    }
+
+    .message-box-buttons .btn {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    .about-content {
+        width: min(490px, 80vw);
+
+        height: auto;
+
+        max-height: 80vh;
+
+        margin-top: 7vh;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+
+        overflow-y: auto;
+    }
+
+
+    /* =====================================================
+       CUSTOM EXPORTER
+       ===================================================== */
+
+    .edit-custom-exporter-content {
+        width: 84vw;
+        height: 78vh;
+
+        margin-top: 6vh;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .edit-custom-exporter-data {
+        height: calc(78vh - 100px);
+    }
+
+
+    /* =====================================================
+       SHEET SPLITTER
+       ===================================================== */
+
+    .sheet-splitter-content {
+        width: 92vw;
+        height: 86vh;
+
+        margin-top: 5vh;
+
+        padding: 10px;
+
+        box-sizing: border-box;
+
+        overflow: auto;
+    }
+
+    .sheet-splitter-view {
+        width: calc(100% - 215px);
+
+        height: calc(100% - 90px);
+
+        box-sizing: border-box;
+    }
+
+    .sheet-splitter-controls {
+        width: 195px;
+
+        height: calc(100% - 90px);
+
+        box-sizing: border-box;
+    }
+
+    .sheet-splitter-bottom {
+        margin-top: 5px;
+        padding: 5px;
+    }
+}
+
+
+/* =========================================================
+   SHORT LANDSCAPE SCREEN
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-height: 550px) {
+
+    html,
+    body {
+        font-size: 11px;
+    }
+
+    .main-header {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .main-header-app-name {
+        font-size: 15px;
+    }
+
+    .main-header-app-name img {
+        max-height: 38px;
+    }
+
+    .main-layout {
+        height: calc(100% - 60px);
+    }
+
+    .images-controllers {
+        height: 39px;
+    }
+
+    .images-tree {
+        top: 39px;
+    }
+
+    .results-view-container {
+        height: calc(100% - 43px) !important;
+    }
+
+    .results-view-footer {
+        height: 43px;
+
+        padding-top: 5px;
+    }
+
+    .pack-properties-containter td {
+        font-size: 10px;
+    }
+
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"],
+    .pack-properties-containter td > select {
+        min-width: 115px;
+
+        height: 25px;
+
+        font-size: 10px;
+    }
+
+    .pack-properties-containter td:last-child {
+        min-width: 115px;
+    }
+
+    .btn,
+    .images-controllers .btn,
+    .results-view-footer .btn {
+        padding: 6px 7px;
+
+        font-size: 10px;
+    }
+}
 /* =========================================================
    MOBILE UI - DARK THEME
    Free Texture Packer 0.6.7
