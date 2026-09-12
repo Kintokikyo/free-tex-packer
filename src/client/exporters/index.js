@@ -130,13 +130,27 @@ function prepareData(data, options) {
             sourceSize.h *= opt.scale;
         }
 
+        let plistOffset = null;
+        if(stateMatch) {
+            let stateName = stateMatch[1];
+            let offset = offsets[stateName];
+            
+            if(offset) {
+                plistOffset = {
+                    x: offset.x * opt.scale,
+                    y: offset.y * opt.scale
+                };
+            }
+        }
+
         ret.push({
             name: name,
             frame: frame,
             spriteSourceSize: spriteSourceSize,
             sourceSize: sourceSize,
             rotated: item.rotated,
-            trimmed: trimmed
+            trimmed: trimmed, 
+            plistOffset: plistOffset
         });
 
     }
