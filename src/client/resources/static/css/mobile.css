@@ -688,165 +688,396 @@
     }
 }
 
-/* =========================================
-   MOBILE DARK UI
-   Free Texture Packer
-   ========================================= */
+/* =========================================================
+   MOBILE UI - GODOT DARK THEME
+   Free Texture Packer 0.6.7
+   ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
+    /* =====================================================
+       BASE
+       ===================================================== */
+
     html,
     body {
-        background: #0b1220;
-        color: #e6edf7;
+        width: 100%;
+        height: 100%;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        background: #181818;
+        color: #e0e0e0;
+
+        font-size: 12px;
     }
 
-    /* =========================
+
+    /* =====================================================
        HEADER
-       ========================= */
+       ===================================================== */
 
     .main-header {
-        background: #111a29;
-        border-bottom: 1px solid #24344d;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        width: 100%;
+        height: 56px;
+
+        padding-left: 8px;
+        padding-right: 8px;
+
+        line-height: 56px;
+
+        box-sizing: border-box;
+        white-space: nowrap;
+
+        background: #202020;
+        border-bottom: 1px solid #383838;
+
+        box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.35);
     }
 
 
-    /* =========================
-       MAIN PANELS
-       ========================= */
+    /* =====================================================
+       MAIN LAYOUT
+       ===================================================== */
 
-    .images-list,
-    .results-view,
-    .props-list {
-        background: #111c2d;
-        border: 1px solid #263a57;
+    .main-layout {
+        width: 100%;
+        height: calc(100% - 66px);
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 25%)
+            minmax(0, 50%)
+            minmax(0, 25%);
+
+        column-gap: 4px;
+
+        align-items: stretch;
+    }
+
+
+    /* =====================================================
+       LEFT - IMAGE LIST
+       ===================================================== */
+
+    .images-list {
+        position: relative;
+
+        width: auto !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0;
+
+        float: none !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        grid-column: 1;
+        grid-row: 1;
+
+        background: #202020;
+
+        border: 1px solid #383838;
         border-radius: 9px;
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.30);
+
+        box-shadow:
+            0 3px 12px rgba(0, 0, 0, 0.35);
+
+        color: #e0e0e0;
     }
 
 
-    /* =========================
-       BUTTON
-       ========================= */
+    /* =====================================================
+       CENTER - PREVIEW
+       ===================================================== */
+
+    .results-view {
+        position: relative;
+
+        width: auto !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0;
+
+        float: none !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        grid-column: 2;
+        grid-row: 1;
+
+        background: #202020;
+
+        border: 1px solid #383838;
+        border-radius: 9px;
+
+        box-shadow:
+            0 3px 12px rgba(0, 0, 0, 0.35);
+
+        color: #e0e0e0;
+    }
+
+
+    /* =====================================================
+       RIGHT - PROPERTIES
+       ===================================================== */
+
+    .props-list {
+        position: relative;
+
+        width: auto !important;
+        height: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+        grid-column: 3;
+        grid-row: 1;
+
+        background: #202020;
+
+        border: 1px solid #383838;
+        border-radius: 9px;
+
+        box-shadow:
+            0 3px 12px rgba(0, 0, 0, 0.35);
+
+        color: #e0e0e0;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
 
     button {
-        border-radius: 7px;
-        border: 1px solid #334a68;
-        background: #1b2b42;
-        color: #e8eef7;
-        transition: background 0.15s ease;
+        border-radius: 6px;
+
+        border: 1px solid #454545;
+
+        background: #303030;
+
+        color: #e0e0e0;
+
+        transition:
+            background 0.15s ease,
+            border-color 0.15s ease;
     }
 
     button:hover {
-        background: #243a58;
+        background: #3a3a3a;
+        border-color: #555555;
     }
 
     button:active {
-        background: #2b4669;
+        background: #454545;
     }
 
 
-    /* =========================
-       INPUT
-       ========================= */
+    /* =====================================================
+       INPUTS
+       ===================================================== */
 
     input[type="text"],
     input[type="number"],
     input[type="password"],
     select {
-        background: #17263a;
-        color: #e6edf7;
-        border: 1px solid #344b69;
+
+        background: #2b2b2b;
+
+        color: #e0e0e0;
+
+        border: 1px solid #454545;
+
         border-radius: 6px;
+
+        box-sizing: border-box;
     }
+
 
     input[type="text"]:focus,
     input[type="number"]:focus,
     input[type="password"]:focus,
     select:focus {
-        border-color: #2388ff;
+
+        border-color: #478cbf;
+
         outline: none;
-        box-shadow: 0 0 0 1px #2388ff;
+
+        box-shadow:
+            0 0 0 1px #478cbf;
     }
 
 
-    /* =========================
+    /* =====================================================
        CHECKBOX
-       ========================= */
+       ===================================================== */
 
     input[type="checkbox"] {
-        accent-color: #1683ff;
+        accent-color: #478cbf;
     }
 
 
-    /* =========================
-       FILE LIST
-       ========================= */
+    /* =====================================================
+       PROPERTIES TABLE
+       ===================================================== */
 
-    .images-list {
-        color: #dbe5f2;
+    .pack-properties-containter {
+        color: #e0e0e0;
+    }
+
+    .pack-properties-containter table {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        table-layout: auto;
+
+        color: #e0e0e0;
     }
 
 
-    /* =========================
+    .pack-properties-containter td:first-child {
+        width: 42%;
+    }
+
+
+    .pack-properties-containter td:last-child {
+        width: 58%;
+
+        min-width: 125px;
+    }
+
+
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"],
+    .pack-properties-containter td > select {
+
+        display: block;
+
+        width: 100%;
+
+        min-width: 125px;
+
+        height: 28px;
+
+        padding: 3px 5px;
+
+        box-sizing: border-box;
+
+        font-size: 11px;
+
+        background: #2b2b2b;
+
+        color: #e0e0e0;
+
+        border: 1px solid #454545;
+
+        border-radius: 6px;
+    }
+
+
+    /* =====================================================
+       OFFSET STATE
+       ===================================================== */
+
+    .offset-editor {
+        background: #282828;
+
+        border: 1px solid #404040;
+
+        border-radius: 8px;
+
+        color: #e0e0e0;
+    }
+
+
+    /* =====================================================
+       LINKS
+       ===================================================== */
+
+    a {
+        color: #6aa9d8;
+    }
+
+
+    /* =====================================================
        SCROLLBAR
-       ========================= */
+       ===================================================== */
 
     * {
         scrollbar-width: thin;
-        scrollbar-color: #334a68 #111c2d;
+
+        scrollbar-color:
+            #4a4a4a
+            #202020;
     }
+
 
     *::-webkit-scrollbar {
         width: 7px;
         height: 7px;
     }
 
+
     *::-webkit-scrollbar-track {
-        background: #111c2d;
+        background: #202020;
     }
 
+
     *::-webkit-scrollbar-thumb {
-        background: #334a68;
+        background: #4a4a4a;
+
         border-radius: 10px;
     }
 
+
     *::-webkit-scrollbar-thumb:hover {
-        background: #456284;
+        background: #5a5a5a;
     }
 
 
-    /* =========================
-       PROPERTIES
-       ========================= */
+    /* =====================================================
+       TEXT SELECTION
+       ===================================================== */
 
-    .pack-properties-containter {
-        color: #dbe5f2;
-    }
-
-    .pack-properties-containter table {
-        color: #dbe5f2;
-    }
-
-
-    /* =========================
-       OFFSET STATE
-       ========================= */
-
-    .offset-editor {
-        background: #16243a;
-        border: 1px solid #2a405d;
-        border-radius: 8px;
-    }
-
-
-    /* =========================
-       LINKS
-       ========================= */
-
-    a {
-        color: #62aaff;
+    ::selection {
+        background: #478cbf;
+        color: #ffffff;
     }
 
 }
