@@ -17,6 +17,7 @@ class APP {
         this.images = {};
         this.packOptions = {};
         this.packResult = null;
+        this.offsets = {};
 
         this.onPackComplete = this.onPackComplete.bind(this);
         this.onPackError = this.onPackError.bind(this);
@@ -24,6 +25,7 @@ class APP {
         Observer.on(GLOBAL_EVENT.IMAGES_LIST_CHANGED, this.onImagesListChanged, this);
         Observer.on(GLOBAL_EVENT.PACK_OPTIONS_CHANGED, this.onPackOptionsChanged, this);
         Observer.on(GLOBAL_EVENT.PACK_EXPORTER_CHANGED, this.onPackExporterOptionsChanged, this);
+        Observer.on(GLOBAL_EVENT.OFFSETS_CHANGED, this.onOffsetsChanged, this);
         Observer.on(GLOBAL_EVENT.START_EXPORT, this.startExport, this);
     }
 
@@ -43,6 +45,10 @@ class APP {
 
     onPackExporterOptionsChanged(data) {
         this.packOptions = data;
+    }
+    
+    onOffsetsChanged(data) {
+        this.offsets = data;
     }
 
     pack() {
