@@ -1870,52 +1870,339 @@
 
 }
 
+/* =========================================================
+   MOBILE RESPONSIVE FIX
+   Free Texture Packer 0.6.7
+   Fix panel kanan + input + tombol Ekspor
+   ========================================================= */
+
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    /* Khusus baris tombol Ekspor */
-    .pack-properties-containter td[colspan="3"] {
+    /* =====================================================
+       1. MAIN LAYOUT
+       ===================================================== */
+
+    .main-layout {
         width: 100% !important;
+        height: calc(100% - 66px) !important;
+
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: hidden !important;
+
+        display: grid !important;
+
+        /*
+         * Panel:
+         * kiri    = 24%
+         * preview = 46%
+         * kanan   = 30%
+         *
+         * Panel kanan dibuat sedikit lebih lebar
+         * supaya property tidak terpotong.
+         */
+        grid-template-columns:
+            minmax(0, 24%)
+            minmax(0, 46%)
+            minmax(0, 30%) !important;
+
+        column-gap: 4px !important;
+
+        align-items: stretch !important;
+    }
+
+
+    /* =====================================================
+       2. PANEL KANAN
+       ===================================================== */
+
+    .props-list {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+    }
+
+
+    /* =====================================================
+       3. CONTAINER PROPERTY
+       ===================================================== */
+
+    .pack-properties-containter {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 5px !important;
+
+        box-sizing: border-box !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       4. TABLE PROPERTY
+       ===================================================== */
+
+    .pack-properties-containter table {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        table-layout: auto !important;
+    }
+
+
+    /* =====================================================
+       5. TABLE CELL
+       ===================================================== */
+
+    .pack-properties-containter td {
+        padding: 2px !important;
+
+        font-size: 11px !important;
+
+        box-sizing: border-box !important;
+
+        /*
+         * Jangan biarkan isi memaksa tabel menjadi
+         * lebih lebar dari panel.
+         */
+        min-width: 0 !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: normal !important;
+    }
+
+
+    /* =====================================================
+       6. KOLOM LABEL
+       ===================================================== */
+
+    .pack-properties-containter td:first-child {
+        width: 42% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       7. KOLOM INPUT / VALUE
+       ===================================================== */
+
+    .pack-properties-containter td:last-child {
+        width: 58% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       8. TEXT INPUT + NUMBER INPUT
+       ===================================================== */
+
+    .pack-properties-containter td > input[type="text"],
+    .pack-properties-containter td > input[type="number"] {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 28px !important;
+
+        padding: 3px 5px !important;
+
+        box-sizing: border-box !important;
+
+        font-size: 11px !important;
+    }
+
+
+    /* =====================================================
+       9. SELECT
+       ===================================================== */
+
+    .pack-properties-containter td > select {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 28px !important;
+
+        padding: 3px 5px !important;
+
+        box-sizing: border-box !important;
+
+        font-size: 11px !important;
+    }
+
+
+    /* =====================================================
+       10. PASSWORD INPUT
+       ===================================================== */
+
+    .pack-properties-containter td > input[type="password"] {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       11. BARIS TOMBOL EKSPOR
+       ===================================================== */
+
+    .pack-properties-containter td[colspan="3"] {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
         min-width: 0 !important;
 
         padding: 2px !important;
 
         box-sizing: border-box !important;
+
         text-align: center !important;
+
+        white-space: normal !important;
+
+        overflow: hidden !important;
     }
 
-    /* Tombol Ekspor */
+
+    /* =====================================================
+       12. TOMBOL EKSPOR
+       ===================================================== */
+
     .pack-properties-containter td[colspan="3"] .btn {
+
         display: block !important;
 
         width: 100% !important;
+
         max-width: 100% !important;
+
+        min-width: 0 !important;
 
         margin: 0 !important;
 
-        box-sizing: border-box !important;
-
         padding: 7px 8px !important;
 
+        box-sizing: border-box !important;
+
         background: #2e9b5f !important;
+
         border: 1px solid #3bbf76 !important;
+
         border-radius: 7px !important;
 
         color: #ffffff !important;
 
         text-align: center !important;
+
         line-height: 1.1 !important;
 
         font-weight: bold !important;
 
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
         box-shadow: none !important;
+
+        transform: none;
     }
 
+
+    /* =====================================================
+       13. EKSPOR HOVER
+       ===================================================== */
+
     .pack-properties-containter td[colspan="3"] .btn:hover {
+
         background: #35ad6a !important;
+
         border-color: #4bce84 !important;
     }
 
+
+    /* =====================================================
+       14. EKSPOR ACTIVE
+       ===================================================== */
+
     .pack-properties-containter td[colspan="3"] .btn:active {
+
         background: #278650 !important;
+
+        border-color: #3bbf76 !important;
+
+        /*
+         * Jangan scale tombol.
+         * Scale bisa membuatnya terlihat keluar
+         * dari panel ketika ruang sangat sempit.
+         */
+        transform: none !important;
     }
+
+
+    /* =====================================================
+       15. CHECKBOX
+       ===================================================== */
+
+    .pack-properties-containter input[type="checkbox"] {
+
+        width: 16px !important;
+
+        height: 16px !important;
+
+        min-width: 16px !important;
+
+        margin: 0 !important;
+
+        vertical-align: middle !important;
+    }
+
 }
