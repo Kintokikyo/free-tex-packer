@@ -1869,6 +1869,7 @@
 
 }
 
+
 /* =========================================================
    MOBILE RESPONSIVE FIX
    Free Texture Packer 0.6.7
@@ -2999,5 +3000,52 @@
     .tree-view-item.back-400:hover {
         background: #263c55 !important;
         color: #ffffff !important;
+    }
+}
+
+/* =========================================================
+   MOBILE UI - SEPARATE SELECTED & CURRENT
+   Selected = biru
+   Current saja = highlight ringan
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* CURRENT TAPI TIDAK SELECTED */
+    .image-list-item.image-list-item-current:not(.back-400) {
+        background: #20252d !important;
+        color: #cbd1da !important;
+        border: none !important;
+    }
+
+    /* Thumbnail current tetapi tidak selected */
+    .image-list-item.image-list-item-current:not(.back-400)
+    .image-list-image-container {
+        border-color: #4a5666 !important;
+    }
+
+    /* SELECTED */
+    .image-list-item.back-400 {
+        background: #263c55 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    /* Thumbnail selected */
+    .image-list-item.back-400
+    .image-list-image-container {
+        border-color: #3182ce !important;
+    }
+
+    /* SELECTED + CURRENT */
+    .image-list-item.back-400.image-list-item-current {
+        background: #263c55 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    .image-list-item.back-400.image-list-item-current
+    .image-list-image-container {
+        border-color: #3182ce !important;
     }
 }
