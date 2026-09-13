@@ -334,7 +334,20 @@ class ImagesList extends React.Component {
         let images = this.state.images;
 
         if(e.isFolder) {
-            if(e.ctrlKey) {
+            if(e.touchDevice) {
+                let hasUnselected = false;
+                
+                for(let key in images) {
+                    if(key.substr(0, path.length + 1) === path + "/") {
+                        if(!images[key].selected) {
+                            hasUnselected = true;
+                            break;
+                        }
+                    }
+                }
+                this.selectImagesFolder(path, hasUnselected);
+            }
+            else if(e.ctrlKey) {
                 this.selectImagesFolder(path, true);
             }
             else if(e.shiftKey) {
@@ -356,7 +369,10 @@ class ImagesList extends React.Component {
         else {
             let image = images[path];
             if(image) {
-                if(e.ctrlKey) {
+                if(e.touchDevice) {
+                    image.selected = !image.selected;
+                }
+                else if(e.ctrlKey) {
                     image.selected = !image.selected;
                 }
                 else if(e.shiftKey) {
