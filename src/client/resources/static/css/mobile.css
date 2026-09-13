@@ -2860,3 +2860,144 @@
         box-shadow: none !important;
     }
 }
+
+/* =========================================================
+   MODERN FOLDER ICON
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .tree-view-folder {
+        display: inline-block !important;
+
+        width: 17px !important;
+        height: 13px !important;
+
+        margin-right: 5px !important;
+        margin-bottom: -2px !important;
+
+        background-image: none !important;
+
+        background: #d6a84f !important;
+
+        border-radius: 2px 3px 3px 3px !important;
+
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    /* Bagian atas folder */
+    .tree-view-folder::before {
+        content: "";
+
+        position: absolute;
+
+        left: 1px;
+        top: -3px;
+
+        width: 7px;
+        height: 4px;
+
+        background: #d6a84f;
+
+        border-radius: 2px 2px 0 0;
+    }
+}
+
+/* =========================================================
+   MODERN FOLDER ICON - MOBILE
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* Folder */
+    .tree-view-folder {
+        display: inline-block !important;
+
+        width: 18px !important;
+        height: 13px !important;
+
+        margin-right: 6px !important;
+        margin-bottom: -2px !important;
+
+        background: #3182ce !important;
+        background-image: none !important;
+
+        border-radius: 2px 3px 3px 3px !important;
+
+        position: relative !important;
+        box-sizing: border-box !important;
+
+        vertical-align: middle !important;
+    }
+
+    /* Tab bagian atas folder */
+    .tree-view-folder::before {
+        content: "" !important;
+
+        position: absolute !important;
+
+        left: 1px !important;
+        top: -3px !important;
+
+        width: 8px !important;
+        height: 4px !important;
+
+        background: #3182ce !important;
+
+        border-radius: 2px 2px 0 0 !important;
+    }
+
+    /* Highlight bagian atas folder */
+    .tree-view-folder::after {
+        content: "" !important;
+
+        position: absolute !important;
+
+        left: 2px !important;
+        right: 2px !important;
+        top: 2px !important;
+
+        height: 1px !important;
+
+        background: rgba(255,255,255,0.18) !important;
+
+        border-radius: 1px !important;
+    }
+
+
+    /* =====================================================
+       FOLDER ITEM
+       ===================================================== */
+
+    /* Normal */
+    .tree-view-item {
+        background: transparent !important;
+        color: #cbd1da !important;
+
+        border: none !important;
+        border-radius: 6px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Hover */
+    .tree-view-item:hover {
+        background: #252b34 !important;
+        color: #f0f2f5 !important;
+    }
+
+    /* Folder terpilih */
+    .tree-view-item.back-400 {
+        background: #263c55 !important;
+        color: #ffffff !important;
+
+        border: none !important;
+    }
+
+    /* Folder terpilih + hover */
+    .tree-view-item.back-400:hover {
+        background: #263c55 !important;
+        color: #ffffff !important;
+    }
+}
