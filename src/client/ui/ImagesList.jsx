@@ -388,9 +388,12 @@ class ImagesList extends React.Component {
             }
         }
 
-        this.setState({images: images});
-        
-        this.emitSelectedChanges();
+        this.setState(
+            {images: images},
+            () => {
+                this.emitSelectedChanges();
+            }
+        );
     }
 
     handleImageClearSelection() {
