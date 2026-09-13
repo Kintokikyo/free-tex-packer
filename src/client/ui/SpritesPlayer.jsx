@@ -127,7 +127,8 @@ class SpritesPlayer extends React.Component {
 
     renderTexture() {
         let ctx = ReactDOM.findDOMNode(this.refs.view).getContext("2d");
-
+        
+        ctx.imageSmoothingEnabled = false;
         ctx.clearRect(0, 0, this.width, this.height);
 
         let texture = this.currentTextures[this.currentFrame];
@@ -138,6 +139,7 @@ class SpritesPlayer extends React.Component {
         buffer.height = texture.config.sourceSize.h;
         
         let bufferCtx = buffer.getContext("2d");
+        bufferCtx.imageSmoothingEnabled = false;
         bufferCtx.clearRect(0, 0, texture.config.sourceSize.w, texture.config.sourceSize.h);
 
         let x = this.width/2, y = this.height/2;
