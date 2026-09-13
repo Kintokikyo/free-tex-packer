@@ -38,7 +38,10 @@ class PackProperties extends React.Component {
         this.packOptions = this.loadOptions();
         this.loadCustomExporter();
         
-        this.state = {packer: this.packOptions.packer};
+        this.state = {
+            packer: this.packOptions.packer, 
+            exporter: this.packOptions.exporter
+        };
     }
     
     static get i() {
@@ -218,7 +221,13 @@ class PackProperties extends React.Component {
         this.updateEditCustomTemplateButton();
         
         this.onExporterPropChanged();
-        if(doRefresh) this.onPropChanged();
+        if(doRefresh) {
+            this.onPropChanged();
+        }
+
+        this.setState({
+            exporter: this.packOptions.exporter
+        });
     }
     
     updateEditCustomTemplateButton() {
@@ -435,9 +444,9 @@ class PackProperties extends React.Component {
                         </tbody>
                     </table>
                     {(
-                this.packOptions.exporter === "JsonHash" ||
-                this.packOptions.exporter === "JsonArray" ||
-                this.packOptions.exporter === "Cocos2d") && <OffsetEditor />}
+                this.state.exporter === "JSON (hash)" ||
+                this.state.exporter === "JSON (array)" ||
+                this.state.exporter === "cocos2d") && <OffsetEditor />}
                 </div>
             </div>
         );
