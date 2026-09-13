@@ -3049,3 +3049,26 @@
         border-color: #3182ce !important;
     }
 }
+
+/* =========================================================
+   PIXEL PERFECT ANIMATION PREVIEW
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .player-container canvas,
+    .player-window canvas,
+    .player-view-container canvas {
+        image-rendering: pixelated !important;
+        image-rendering: crisp-edges !important;
+        image-rendering: -moz-crisp-edges !important;
+    }
+
+    .player-container img,
+    .player-window img,
+    .player-view-container img {
+        image-rendering: pixelated !important;
+        image-rendering: crisp-edges !important;
+        image-rendering: -moz-crisp-edges !important;
+    }
+}
