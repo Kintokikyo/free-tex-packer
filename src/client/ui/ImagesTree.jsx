@@ -58,11 +58,16 @@ class TreeItem extends React.Component {
     }
 
     onSelect(e) {
+        let isTouchDevice =
+            ("ontouchstart" in window) || 
+            (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+        
         Observer.emit(GLOBAL_EVENT.IMAGE_ITEM_SELECTED, {
             isFolder: false,
             path: this.props.data.path,
             ctrlKey: e.ctrlKey,
-            shiftKey: e.shiftKey
+            shiftKey: e.shiftKey,
+            touchDevice: isTouchDevice
         });
         
         e.preventDefault();
@@ -106,11 +111,16 @@ class TreeView extends React.Component {
     }
 
     handleClick(e) {
+        let isTouchDevice =
+            ("ontouchstart" in window) || 
+            (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+        
         Observer.emit(GLOBAL_EVENT.IMAGE_ITEM_SELECTED, {
             isFolder: true,
             path: this.props.data.path,
             ctrlKey: e.ctrlKey,
-            shiftKey: e.shiftKey
+            shiftKey: e.shiftKey,
+            touchDevice: isTouchDevice
         });
 
         e.preventDefault();
