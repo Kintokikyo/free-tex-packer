@@ -2480,3 +2480,383 @@
     }
 
 }
+
+/* =========================================================
+   OFFSET STATE - MODERN UI
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .offset-editor {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin-top: 10px !important;
+        padding: 12px !important;
+
+        box-sizing: border-box !important;
+
+        background: #1b2028 !important;
+        border: 1px solid #3b4655 !important;
+        border-radius: 10px !important;
+
+        overflow: hidden !important;
+
+        color: #d9dee7 !important;
+    }
+
+
+    /* =========================
+       TITLE
+       ========================= */
+
+    .offset-editor > div:first-child {
+        margin: 0 0 10px 0 !important;
+        padding: 0 0 8px 0 !important;
+
+        border-bottom: 1px solid #343d4a !important;
+
+        font-size: 14px !important;
+        font-weight: bold !important;
+        color: #f1f3f6 !important;
+
+        text-align: left !important;
+    }
+
+
+    /* Accent kecil di title */
+    .offset-editor > div:first-child::before {
+        content: "" !important;
+
+        display: inline-block !important;
+
+        width: 4px !important;
+        height: 14px !important;
+
+        margin-right: 7px !important;
+
+        vertical-align: -2px !important;
+
+        background: #3182ce !important;
+        border-radius: 4px !important;
+    }
+
+
+    /* =========================
+       LABEL
+       ========================= */
+
+    .offset-editor > div:nth-of-type(2),
+    .offset-editor > div:nth-of-type(3),
+    .offset-editor > div:nth-of-type(4) {
+        margin: 0 0 4px 0 !important;
+
+        font-size: 12px !important;
+        font-weight: bold !important;
+
+        color: #b8c0cc !important;
+
+        text-align: left !important;
+    }
+
+
+    /* =========================
+       SELECT
+       ========================= */
+
+    .offset-editor > select {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        height: 36px !important;
+
+        margin: 0 0 10px 0 !important;
+        padding: 0 10px !important;
+
+        box-sizing: border-box !important;
+
+        background: #202631 !important;
+        color: #dfe4ec !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 7px !important;
+
+        outline: none !important;
+    }
+
+    .offset-editor > select:focus {
+        border-color: #3182ce !important;
+        box-shadow: 0 0 0 1px #3182ce !important;
+    }
+
+
+    /* =========================
+       NUMBER INPUT
+       ========================= */
+
+    .offset-editor > input[type="number"] {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        height: 36px !important;
+
+        margin: 0 0 10px 0 !important;
+        padding: 0 10px !important;
+
+        box-sizing: border-box !important;
+
+        background: #202631 !important;
+        color: #dfe4ec !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 7px !important;
+
+        outline: none !important;
+    }
+
+    .offset-editor > input[type="number"]:focus {
+        border-color: #3182ce !important;
+        box-shadow: 0 0 0 1px #3182ce !important;
+    }
+
+
+    /* =========================
+       BUTTONS
+       ========================= */
+
+    .offset-editor > button {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        height: 34px !important;
+
+        box-sizing: border-box !important;
+
+        margin: 0 0 6px 0 !important;
+
+        border-radius: 7px !important;
+        border: none !important;
+        outline: none !important;
+
+        font-size: 12px !important;
+        font-weight: bold !important;
+
+        cursor: pointer !important;
+
+        transition:
+            background-color .15s ease,
+            transform .1s ease !important;
+    }
+
+
+    /* Terapkan */
+    .offset-editor > button:first-of-type {
+        background: #3182ce !important;
+        border: none !important;
+
+        color: #ffffff !important;
+    }
+
+    .offset-editor > button:first-of-type:hover {
+        background: #4299e1 !important;
+    }
+
+    /* Hapus Offset */
+    .offset-editor > button:last-of-type {
+        margin-bottom: 0 !important;
+
+        background: #e05260 !important;
+        border: none !important;
+
+        color: #ffffff !important;
+    }
+
+    .offset-editor > button:last-of-type:hover {
+        background: #ef6674 !important;
+    }
+
+
+    /* Tekan tombol */
+    .offset-editor > button:active {
+        transform: scale(0.98) !important;
+    }
+
+
+    /* =========================
+       MOBILE/DPI SAFETY
+       ========================= */
+
+    .offset-editor,
+    .offset-editor *,
+    .offset-editor select,
+    .offset-editor input,
+    .offset-editor button {
+        max-width: 100% !important;
+    }
+}
+
+/* =========================================================
+   OFFSET EDITOR - BUTTON STYLE
+   FINAL
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* -----------------------------------------------------
+       SEMUA BUTTON OFFSET
+       ----------------------------------------------------- */
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        height: 34px !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        box-sizing: border-box !important;
+
+        padding: 0 10px !important;
+
+        border: none !important;
+        border-width: 0 !important;
+        border-style: none !important;
+
+        outline: none !important;
+
+        border-radius: 7px !important;
+
+        font-family: inherit !important;
+        font-size: 12px !important;
+        font-weight: bold !important;
+
+        color: #ffffff !important;
+
+        cursor: pointer !important;
+
+        box-shadow: none !important;
+
+        appearance: none !important;
+        -webkit-appearance: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            transform 0.1s ease !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TOMBOL TERAPKAN
+       ----------------------------------------------------- */
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button:first-of-type {
+
+        margin-top: 8px !important;
+        margin-bottom: 5px !important;
+
+        background: #3182ce !important;
+        background-color: #3182ce !important;
+
+        border: none !important;
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+    }
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button:first-of-type:hover {
+
+        background: #4299e1 !important;
+        background-color: #4299e1 !important;
+
+        border: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TOMBOL HAPUS OFFSET
+       ----------------------------------------------------- */
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button:last-of-type {
+
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+
+        background: #e05260 !important;
+        background-color: #e05260 !important;
+
+        border: none !important;
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+    }
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button:last-of-type:hover {
+
+        background: #ef6674 !important;
+        background-color: #ef6674 !important;
+
+        border: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ACTIVE / DITEKAN
+       ----------------------------------------------------- */
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button:active {
+
+        transform: scale(0.98) !important;
+
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       FOCUS
+       ----------------------------------------------------- */
+
+    .props-list
+    .pack-properties-containter
+    .offset-editor
+    button:focus {
+
+        outline: none !important;
+
+        border: none !important;
+
+        box-shadow: none !important;
+    }
+}
