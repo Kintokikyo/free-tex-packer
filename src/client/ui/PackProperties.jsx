@@ -434,7 +434,10 @@ class PackProperties extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <OffsetEditor />
+                    {(
+                this.packOptions.exporter === "JsonHash" ||
+                this.packOptions.exporter === "JsonArray" ||
+                this.packOptions.exporter === "Cocos2d") && <OffsetEditor />}
                 </div>
             </div>
         );
