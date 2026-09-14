@@ -3072,3 +3072,260 @@
         image-rendering: -moz-crisp-edges !important;
     }
 }
+
+
+
+/* =========================================================
+   SHEET SPLITTER - MODERN DARK UI
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* -----------------------------------------------------
+       HEADER - PISAHKAN SHEET
+       ----------------------------------------------------- */
+
+    .main-header-controls .btn {
+        background: #2fa866 !important;
+        background-color: #2fa866 !important;
+
+        border: none !important;
+        border-width: 0 !important;
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+
+        border-radius: 6px !important;
+
+        box-shadow: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            transform 0.1s ease !important;
+    }
+
+    .main-header-controls .btn:hover {
+        background: #36b873 !important;
+        background-color: #36b873 !important;
+
+        border: none !important;
+    }
+
+    .main-header-controls .btn:active {
+        background: #278e55 !important;
+        background-color: #278e55 !important;
+
+        border: none !important;
+
+        transform: scale(0.96);
+    }
+
+
+    /* =====================================================
+       SHEET SPLITTER WINDOW
+       ===================================================== */
+
+    .sheet-splitter-content {
+        background: #20252d !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 10px !important;
+
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.45) !important;
+
+        color: #e6e9ee !important;
+    }
+
+
+    /* =====================================================
+       TOP BUTTONS
+       TEXTURE + FILE DATA
+       ===================================================== */
+
+    .sheet-splitter-top .btn {
+        background: #3182ce !important;
+        background-color: #3182ce !important;
+
+        border: none !important;
+        border-width: 0 !important;
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+
+        border-radius: 6px !important;
+
+        box-shadow: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            transform 0.1s ease !important;
+    }
+
+    .sheet-splitter-top .btn:hover {
+        background: #3b8edb !important;
+        background-color: #3b8edb !important;
+
+        border: none !important;
+    }
+
+    .sheet-splitter-top .btn:active {
+        background: #286eaf !important;
+        background-color: #286eaf !important;
+
+        border: none !important;
+
+        transform: scale(0.96);
+    }
+
+
+    /* -----------------------------------------------------
+       FILE NAME BOXES
+       ----------------------------------------------------- */
+
+    .sheet-splitter-info-text {
+        background: #282e38 !important;
+
+        color: #cbd1da !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 5px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       SPLITTER VIEW
+       ===================================================== */
+
+    .sheet-splitter-view {
+        background: #181d24 !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 7px !important;
+
+        overflow: auto !important;
+    }
+
+    .sheet-splitter-view canvas {
+        image-rendering: pixelated !important;
+        image-rendering: crisp-edges !important;
+        image-rendering: -moz-crisp-edges !important;
+
+        border: 1px dotted #4a5666 !important;
+    }
+
+
+    /* =====================================================
+       CONTROL PANEL
+       ===================================================== */
+
+    .sheet-splitter-controls {
+        color: #cbd1da !important;
+    }
+
+    .sheet-splitter-controls select,
+    .sheet-splitter-controls input[type="number"] {
+        background: #282e38 !important;
+
+        color: #e6e9ee !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 6px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .sheet-splitter-controls select:focus,
+    .sheet-splitter-controls input[type="number"]:focus {
+        border-color: #3182ce !important;
+
+        outline: none !important;
+
+        box-shadow:
+            0 0 0 1px #3182ce !important;
+    }
+
+
+    /* =====================================================
+       BOTTOM AREA
+       ===================================================== */
+
+    .sheet-splitter-bottom {
+        background: transparent !important;
+
+        color: #e6e9ee !important;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTTOM BUTTONS
+       ----------------------------------------------------- */
+
+    .sheet-splitter-bottom > div .btn {
+        border: none !important;
+        border-width: 0 !important;
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+
+        border-radius: 6px !important;
+
+        box-shadow: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            transform 0.1s ease !important;
+    }
+
+
+    /* PISAHKAN */
+
+    .sheet-splitter-bottom > div .btn:first-child {
+        background: #2fa866 !important;
+        background-color: #2fa866 !important;
+    }
+
+    .sheet-splitter-bottom > div .btn:first-child:hover {
+        background: #36b873 !important;
+        background-color: #36b873 !important;
+    }
+
+    .sheet-splitter-bottom > div .btn:first-child:active {
+        background: #278e55 !important;
+        background-color: #278e55 !important;
+
+        transform: scale(0.96);
+    }
+
+
+    /* TUTUP */
+
+    .sheet-splitter-bottom > div .btn:last-child {
+        background: #e05260 !important;
+        background-color: #e05260 !important;
+    }
+
+    .sheet-splitter-bottom > div .btn:last-child:hover {
+        background: #ec626f !important;
+        background-color: #ec626f !important;
+    }
+
+    .sheet-splitter-bottom > div .btn:last-child:active {
+        background: #c83f4d !important;
+        background-color: #c83f4d !important;
+
+        transform: scale(0.96);
+    }
+
+
+    /* =====================================================
+       BOTTOM TEXT / SCALE
+       ===================================================== */
+
+    .sheet-splitter-bottom td {
+        color: #e6e9ee !important;
+    }
+
+}
