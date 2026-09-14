@@ -3352,19 +3352,8 @@
 
     /* Overlay */
     .message-box-wrapper {
-        position: fixed !important;
-        left: 0 !important;
-        top: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-
-        width: 100% !important;
-        height: 100% !important;
-
+    
         background: rgba(0, 0, 0, 0.58) !important;
-
-        /* Harus lebih tinggi dari custom-select-menu 999999 */
-        z-index: 1000000 !important;
     }
 
 
