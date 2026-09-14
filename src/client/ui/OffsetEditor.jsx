@@ -2,6 +2,7 @@ import React from 'react';
 
 import ImagesList from './ImagesList.jsx';
 import {Observer, GLOBAL_EVENT} from '../Observer';
+import CustomSelect from './CustomSelect.jsx';
 
 class OffsetEditor extends React.Component {
 
@@ -221,16 +222,9 @@ class OffsetEditor extends React.Component {
                     State:
                 </div>
 
-                <select
-                    className="border-color-gray"
-                    style={{
-                        width: "100%",
-                        boxSizing: "border-box",
-                        marginBottom: "8px"
-                    }}
-                    value={this.state.selectedState}
-                    onChange={this.handleStateChange}
-                >
+                <CustomSelect 
+                    value={this.state.selectedState} 
+                    onChange={this.handleStateChange}>
                     {this.state.states.map(item => {
                         return (
                             <option
@@ -241,7 +235,7 @@ class OffsetEditor extends React.Component {
                             </option>
                         );
                     })}
-                </select>
+                </CustomSelect>
 
                 <div>
                     Offset X:
