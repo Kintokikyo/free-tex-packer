@@ -3445,26 +3445,231 @@
     }
 }
 
-/* DARK NATIVE SELECT / OPTION */
+/* =========================================================
+   MODERN CUSTOM SELECT
+   ========================================================= */
+
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
-    .pack-properties-containter select,
-    .sheet-splitter-controls select {
-        color-scheme: dark !important;
-        background-color: #282e38 !important;
-        color: #e6e9ee !important;
-        border-color: #3b4655 !important;
+    .custom-select {
+        position: relative !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 14px !important;
+        z-index: 50 !important;
     }
 
-    .pack-properties-containter select option,
-    .sheet-splitter-controls select option {
-        background-color: #20252d !important;
+
+    /* KOTAK YANG TERLIHAT */
+    .custom-select-control {
+        width: 100% !important;
+        min-height: 30px !important;
+
+        box-sizing: border-box !important;
+
+        padding: 5px 9px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        background: #282e38 !important;
+        color: #e6e9ee !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 6px !important;
+
+        cursor: pointer !important;
+
+        user-select: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease !important;
+    }
+
+
+    .custom-select-control:hover {
+        background: #303744 !important;
+        background-color: #303744 !important;
+        border-color: #4a5666 !important;
+    }
+
+
+    .custom-select-value {
+        flex: 1 !important;
+
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+
         color: #e6e9ee !important;
     }
 
-    .pack-properties-containter select:focus,
-    .sheet-splitter-controls select:focus {
-        color-scheme: dark !important;
-        outline: none !important;
+
+    .custom-select-arrow {
+        margin-left: 8px !important;
+
+        font-size: 10px !important;
+
+        color: #aeb7c4 !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* POPUP */
+    .custom-select-menu {
+        position: absolute !important;
+
+        left: 0 !important;
+        right: 0 !important;
+
+        top: calc(100% + 4px) !important;
+
+        max-height: 260px !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        background: #20252d !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 7px !important;
+
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.45) !important;
+
+        z-index: 9999 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ITEM */
+    .custom-select-option {
+        min-height: 38px !important;
+
+        box-sizing: border-box !important;
+
+        padding: 8px 10px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        background: #20252d !important;
+        color: #e6e9ee !important;
+
+        border-bottom: 1px solid #303744 !important;
+
+        cursor: pointer !important;
+
+        user-select: none !important;
+
+        transition:
+            background-color 0.12s ease !important;
+    }
+
+
+    .custom-select-option:last-child {
+        border-bottom: none !important;
+    }
+
+
+    .custom-select-option:hover {
+        background: #263c55 !important;
+        background-color: #263c55 !important;
+    }
+
+
+    /* PILIHAN AKTIF */
+    .custom-select-option-selected {
+        background: #3182ce !important;
+        background-color: #3182ce !important;
+
+        color: #ffffff !important;
+    }
+
+
+    .custom-select-option-selected:hover {
+        background: #3b8edb !important;
+        background-color: #3b8edb !important;
+    }
+
+
+    .custom-select-option-text {
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+
+        flex: 1 !important;
+    }
+
+
+    .custom-select-check {
+        width: 18px !important;
+
+        margin-left: 8px !important;
+
+        text-align: center !important;
+
+        color: #ffffff !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* DISABLED */
+    .custom-select-disabled {
+        opacity: 0.55 !important;
+        cursor: not-allowed !important;
+    }
+
+    .custom-select-disabled .custom-select-control {
+        cursor: not-allowed !important;
+    }
+
+
+    /* SCROLLBAR POPUP */
+    .custom-select-menu::-webkit-scrollbar {
+        width: 6px !important;
+    }
+
+    .custom-select-menu::-webkit-scrollbar-track {
+        background: #181d24 !important;
+    }
+
+    .custom-select-menu::-webkit-scrollbar-thumb {
+        background: #3b4655 !important;
+        border-radius: 6px !important;
+    }
+
+    .custom-select-menu::-webkit-scrollbar-thumb:hover {
+        background: #4a5666 !important;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .main-header-language .custom-select {
+        display: inline-block !important;
+        width: 140px !important;
+        margin-left: 8px !important;
+        vertical-align: middle !important;
+    }
+
+    .main-header-language .custom-select-control {
+        min-height: 32px !important;
+        height: 32px !important;
+        padding: 5px 9px !important;
+        box-sizing: border-box !important;
+    }
+
+    .main-header-language .custom-select-menu {
+        min-width: 140px !important;
+        width: 140px !important;
+        right: 0 !important;
+        left: auto !important;
     }
 }
