@@ -8,6 +8,7 @@ import {getDefaultSplitter} from '../splitters';
 import LocalImagesLoader from "../utils/LocalImagesLoader";
 import ReactDOM from "react-dom";
 import Downloader from "platform/Downloader";
+import CustomSelect from './CustomSelect.jsx';
 
 class SheetSplitter extends React.Component {
     constructor(props) {
@@ -359,11 +360,20 @@ class SheetSplitter extends React.Component {
                                 <tr>
                                     <td>{I18.f('FORMAT')}</td>
                                     <td>
-                                        <select ref="dataFormat" className="border-color-gray" value={this.state.splitter.type} onChange={this.changeSplitter}>
+                                        <CustomSelect 
+                                            ref="dataFormat" 
+                                            value={this.state.splitter.type} 
+                                            onChange={this.changeSplitter}> 
                                             {splitters.map(node => {
-                                                return (<option key={"data-format-" + node.type} defaultValue={node.type}>{node.type}</option>)
+                                                return (
+                                                    <option 
+                                                        key={"data-format-" + node.type}
+                                                        value={node.type}> 
+                                                        {node.type}
+                                                    </option>
+                                                );
                                             })}
-                                        </select>
+                                        </CustomSelect>
                                     </td>
                                 </tr>
                                 <tr>
