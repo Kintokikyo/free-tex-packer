@@ -228,7 +228,8 @@ class CustomSelect extends React.Component {
                 ref={this.rootRef}
                 className={
                     "custom-select" +
-                    (this.props.disabled ? " custom-select-disabled" : "")
+                    (this.props.disabled ? " custom-select-disabled" : "") + 
+                    (this.state.open ? " custom-select-open" : "")
                 }
             >
 
