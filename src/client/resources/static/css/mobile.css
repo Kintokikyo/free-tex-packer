@@ -3722,3 +3722,206 @@
         text-overflow: ellipsis !important;
     }
 }
+
+/* =========================================================
+   MODERN ABOUT / INFO
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* =====================================================
+       OVERLAY
+       ===================================================== */
+
+    .about-shader {
+        position: fixed !important;
+
+        left: 0 !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        background: rgba(0, 0, 0, 0.58) !important;
+
+        /*
+         * Lebih tinggi dari custom-select-menu
+         * yang menggunakan z-index 999999.
+         */
+        z-index: 1000000 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       INFO WINDOW
+       ===================================================== */
+
+    .about-content {
+        position: relative !important;
+        z-index: 1000001 !important;
+
+        width: 490px !important;
+        max-width: calc(100% - 32px) !important;
+
+        height: auto !important;
+        max-height: calc(100% - 32px) !important;
+
+        box-sizing: border-box !important;
+
+        margin: 16px auto !important;
+
+        padding: 16px !important;
+
+        background: #20252d !important;
+        color: #e6e9ee !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 10px !important;
+
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.45) !important;
+
+        text-align: left !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .about-logo {
+        background-image: url("../images/logo_white.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: 44px 50px !important;
+
+        filter: invert(1) !important;
+    }
+
+
+    /* =====================================================
+       NAMA + VERSI
+       ===================================================== */
+
+    .about-app-info {
+        color: #e6e9ee !important;
+    }
+
+    .about-app-name {
+        color: #f0f2f5 !important;
+    }
+
+    .about-app-version {
+        color: #aeb7c4 !important;
+    }
+
+
+    /* =====================================================
+       TABLE
+       ===================================================== */
+
+    .about-content table {
+        color: #e6e9ee !important;
+    }
+
+    .about-content td {
+        color: #cbd1da !important;
+    }
+
+
+    /* Label kiri */
+    .about-content td b {
+        color: #e6e9ee !important;
+    }
+
+
+    /* =====================================================
+       LINK
+       ===================================================== */
+
+    .about-content a {
+        color: #7db7f0 !important;
+
+        text-decoration: underline !important;
+    }
+
+    .about-content a:hover {
+        color: #9bc9f5 !important;
+    }
+
+
+    /* =====================================================
+       OK BUTTON
+       ===================================================== */
+
+    .about-controls {
+        text-align: center !important;
+
+        padding: 8px !important;
+        margin-top: 10px !important;
+    }
+
+    .about-controls .btn {
+        min-width: 60px !important;
+
+        padding: 8px 14px !important;
+
+        background: #2fa866 !important;
+        background-color: #2fa866 !important;
+
+        border: none !important;
+        border-width: 0 !important;
+
+        color: #ffffff !important;
+
+        border-radius: 6px !important;
+
+        box-shadow: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            transform 0.1s ease !important;
+    }
+
+
+    .about-controls .btn:hover {
+        background: #36b873 !important;
+        background-color: #36b873 !important;
+    }
+
+
+    .about-controls .btn:active {
+        background: #278e55 !important;
+        background-color: #278e55 !important;
+
+        transform: scale(0.96) !important;
+    }
+
+
+    /* =====================================================
+       SCROLLBAR INFO
+       ===================================================== */
+
+    .about-content::-webkit-scrollbar {
+        width: 6px !important;
+    }
+
+    .about-content::-webkit-scrollbar-track {
+        background: #181d24 !important;
+    }
+
+    .about-content::-webkit-scrollbar-thumb {
+        background: #3b4655 !important;
+        border-radius: 6px !important;
+    }
+
+    .about-content::-webkit-scrollbar-thumb:hover {
+        background: #4a5666 !important;
+    }
+}
