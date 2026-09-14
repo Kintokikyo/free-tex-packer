@@ -30,7 +30,7 @@ class MainHeader extends React.Component {
             <div className="main-header back-900 color-white">
                 <div className="main-header-app-name">
                     <img src="static/images/logo.png" />
-                    {appInfo.displayName} {appInfo.version}
+                    {appInfo.displayName}
                 </div>
 
                 <div className="main-header-about" onClick={this.showAbout}>
