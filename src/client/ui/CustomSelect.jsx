@@ -15,6 +15,7 @@ class CustomSelect extends React.Component {
         };
 
         this.rootRef = React.createRef();
+        this.menuRef = React.createRef();
 
         this.toggle = this.toggle.bind(this);
         this.close = this.close.bind(this);
@@ -70,8 +71,15 @@ class CustomSelect extends React.Component {
             return;
         }
 
+        let willOpen = !this.state.open;
+        
         this.setState({
-            open: !this.state.open
+            open: willOpen
+        }, () => {
+            
+            if(willOpen) {
+                this.updateMenuPosition();
+            }
         });
     }
 
@@ -131,6 +139,73 @@ class CustomSelect extends React.Component {
             });
     }
 
+    updateMenuPosition() {
+
+    if(!this.rootRef.current) {
+        return;
+    }
+
+    let control = this.rootRef.current.querySelector(
+        ".custom-select-control"
+    );
+
+    if(!control) {
+        return;
+    }
+
+    let rect = control.getBoundingClientRect();
+
+    let menuHeight = 0;
+
+    if(this.menuRef && this.menuRef.current) {
+        menuHeight = this.menuRef.current.scrollHeight;
+    }
+
+    let viewportHeight = window.innerHeight;
+
+    let spaceBelow = viewportHeight - rect.bottom;
+    let spaceAbove = rect.top;
+
+    let openUp =
+        spaceBelow < 180 &&
+        spaceAbove > spaceBelow;
+
+    let top;
+
+    if(openUp) {
+        top = rect.top - Math.min(
+            menuHeight,
+            spaceAbove - 4
+        );
+    }
+    else {
+        top = rect.bottom + 4;
+    }
+
+    let left = rect.left;
+
+    let width = rect.width;
+        
+    let screenWidth = window.innerWidth;
+    
+    if(left + width > screenWidth - 4) {
+        left = screenWidth - width - 4;
+    }
+    if(left < 4) {
+        left = 4;}
+
+    this.menuStyle = {
+        position: "fixed",
+        left: left + "px",
+        top: top + "px",
+        width: width + "px",
+        maxHeight: "260px",
+        zIndex: 999999
+    };
+
+    this.forceUpdate();
+    }
+
     render() {
 
         let options = this.getOptions();
@@ -174,7 +249,11 @@ class CustomSelect extends React.Component {
 
                 {this.state.open && !this.props.disabled && (
 
-                    <div className="custom-select-menu">
+                    <div 
+                        ref={this.menuRef} 
+                        className="custom-select-menu" 
+                        style={this.menuStyle}
+                        >
 
                         {options.map((option, index) => {
 
