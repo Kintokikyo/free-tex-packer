@@ -4,6 +4,7 @@ import {Observer, GLOBAL_EVENT} from '../Observer';
 import I18 from '../utils/I18';
 import appInfo from '../../../package.json';
 import languages from '../resources/static/localization/languages.json';
+import CustomSelect from './CustomSelect.jsx';
 
 class MainHeader extends React.Component {
     constructor(props) {
@@ -38,17 +39,21 @@ class MainHeader extends React.Component {
 
                 <div className="main-header-language border-color-gray">
                     {I18.f("LANGUAGE")}
-                    <select defaultValue={I18.currentLocale} onChange={this.changeLanguage}>
+                    <CustomSelect 
+                        defaultValue={I18.currentLocale} 
+                        onChange={this.changeLanguage}>
                         {
                             languages.map((item) => {
                                 return (
-                                    <option key={"localization_" + item.lang} value={item.lang}>
-                                        {item.name}
+                                    <option 
+                                        key={"localization_" + item.lang} 
+                                        value={item.lang}> 
+                                        {item.name} 
                                     </option>
                                 )
                             })
                         }
-                    </select>
+                    </CustomSelect>
                 </div>
 
                 <div className="main-header-controls">
