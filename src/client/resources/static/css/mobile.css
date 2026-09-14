@@ -2548,9 +2548,7 @@
        LABEL
        ========================= */
 
-    .offset-editor > div:nth-of-type(2),
-    .offset-editor > div:nth-of-type(3),
-    .offset-editor > div:nth-of-type(4) {
+    .offset-editor > div:not(.custom-select):not(:first-child) {
         margin: 0 0 4px 0 !important;
 
         font-size: 12px !important;
@@ -3455,7 +3453,7 @@
         position: relative !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        font-size: 14px !important;
+        font-size: 11px !important;
         z-index: 50 !important;
     }
 
@@ -3520,28 +3518,20 @@
 
     /* POPUP */
     .custom-select-menu {
-        position: absolute !important;
-
-        left: 0 !important;
-        right: 0 !important;
-
-        top: calc(100% + 4px) !important;
-
-        max-height: 260px !important;
-
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
+        position: fixed !important;
 
         background: #20252d !important;
-
+        
         border: 1px solid #3b4655 !important;
         border-radius: 7px !important;
-
-        box-shadow:
-            0 8px 24px rgba(0, 0, 0, 0.45) !important;
-
-        z-index: 9999 !important;
-
+        
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+        
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        
+        z-index: 999999 !important;
+        
         box-sizing: border-box !important;
     }
 
@@ -3560,6 +3550,9 @@
 
         background: #20252d !important;
         color: #e6e9ee !important;
+        
+        font-size: 11px !important;
+        font-weight: normal !important;
 
         border-bottom: 1px solid #303744 !important;
 
@@ -3669,7 +3662,5 @@
     .main-header-language .custom-select-menu {
         min-width: 140px !important;
         width: 140px !important;
-        right: 0 !important;
-        left: auto !important;
     }
 }
