@@ -39,9 +39,18 @@ class SpritesPlayer extends React.Component {
         else this.stop();
     }
 
-    componentDidUpdate() {
-        if(this.props.start) this.setup();
-        else this.stop();
+    componentDidUpdate(prevProps) {
+        if(this.props.start) {
+            if(!prevProps.start) {
+                this.setup();
+            }
+            else if(prevProps.scale !== this.props.scale) {
+                this.updateScale();
+            }
+        }
+        else {
+            this.stop();
+        }
     }
     
     setup() {
@@ -75,8 +84,20 @@ class SpritesPlayer extends React.Component {
         let canvas = ReactDOM.findDOMNode(this.refs.view);
         canvas.width = this.width;
         canvas.height = this.height;
-        
+
+        this.updateScale();
         this.updateCurrentTextures();
+    }
+
+    updateScale() {
+        let canvas = ReactDOM.findDOMNode(this.refs.view);
+        
+        if(!canvas) return;
+        
+        let scale = this.props.scale || 1;
+        
+        canvas.style.width = Math.floor(this.width * scale) + "px";
+        canvas.style.height = Math.floor(this.height * scale) + "px";
     }
 
     forceUpdate(e) {
