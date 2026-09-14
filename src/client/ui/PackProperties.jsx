@@ -16,6 +16,7 @@ import {Observer, GLOBAL_EVENT} from '../Observer';
 
 import FileSystem from 'platform/FileSystem';
 import OffsetEditor from './OffsetEditor.jsx';
+import CustomSelect from './CustomSelect.jsx';
 
 const STORAGE_OPTIONS_KEY = "pack-options";
 const STORAGE_CUSTOM_EXPORTER_KEY = "custom-exporter";
@@ -128,15 +129,15 @@ class PackProperties extends React.Component {
         let data = {};
         
         data.textureName = ReactDOM.findDOMNode(this.refs.textureName).value;
-        data.textureFormat = ReactDOM.findDOMNode(this.refs.textureFormat).value;
+        data.textureFormat = this.refs.textureFormat.value;
         data.removeFileExtension = ReactDOM.findDOMNode(this.refs.removeFileExtension).checked;
         data.prependFolderName = ReactDOM.findDOMNode(this.refs.prependFolderName).checked;
         data.base64Export = ReactDOM.findDOMNode(this.refs.base64Export).checked;
         data.tinify = ReactDOM.findDOMNode(this.refs.tinify).checked;
         data.tinifyKey = ReactDOM.findDOMNode(this.refs.tinifyKey).value;
         data.scale = Number(ReactDOM.findDOMNode(this.refs.scale).value);
-        data.filter = ReactDOM.findDOMNode(this.refs.filter).value;
-        data.exporter = ReactDOM.findDOMNode(this.refs.exporter).value;
+        data.filter = this.refs.filter.value;
+        data.exporter = this.refs.exporter.value;
         data.fileName = ReactDOM.findDOMNode(this.refs.fileName).value;
         data.savePath = ReactDOM.findDOMNode(this.refs.savePath).value;
         data.width = Number(ReactDOM.findDOMNode(this.refs.width).value) || 0;
@@ -147,26 +148,26 @@ class PackProperties extends React.Component {
         data.extrude = Number(ReactDOM.findDOMNode(this.refs.extrude).value) || 0;
         data.allowRotation = ReactDOM.findDOMNode(this.refs.allowRotation).checked;
         data.allowTrim = ReactDOM.findDOMNode(this.refs.allowTrim).checked;
-        data.trimMode = ReactDOM.findDOMNode(this.refs.trimMode).value;
+        data.trimMode = this.refs.trimMode.value;
         data.alphaThreshold = ReactDOM.findDOMNode(this.refs.alphaThreshold).value;
         data.detectIdentical = ReactDOM.findDOMNode(this.refs.detectIdentical).checked;
-        data.packer = ReactDOM.findDOMNode(this.refs.packer).value;
-        data.packerMethod = ReactDOM.findDOMNode(this.refs.packerMethod).value;
+        data.packer = this.refs.packer.value;
+        data.packerMethod = this.refs.packerMethod.value;
 
         this.packOptions = this.applyOptionsDefaults(data);
     }
     
     refreshPackOptions() {
         ReactDOM.findDOMNode(this.refs.textureName).value = this.packOptions.textureName;
-        ReactDOM.findDOMNode(this.refs.textureFormat).value = this.packOptions.textureFormat;
+        this.refs.textureFormat.value = this.packOptions.textureFormat;
         ReactDOM.findDOMNode(this.refs.removeFileExtension).checked = this.packOptions.removeFileExtension;
         ReactDOM.findDOMNode(this.refs.prependFolderName).checked = this.packOptions.prependFolderName;
         ReactDOM.findDOMNode(this.refs.base64Export).checked = this.packOptions.base64Export;
         ReactDOM.findDOMNode(this.refs.tinify).checked = this.packOptions.tinify;
         ReactDOM.findDOMNode(this.refs.tinifyKey).value = this.packOptions.tinifyKey;
         ReactDOM.findDOMNode(this.refs.scale).value = Number(this.packOptions.scale);
-        ReactDOM.findDOMNode(this.refs.filter).value = this.packOptions.filter;
-        ReactDOM.findDOMNode(this.refs.exporter).value = this.packOptions.exporter;
+        this.refs.filter.value = this.packOptions.filter;
+        this.refs.exporter.value = this.packOptions.exporter;
         ReactDOM.findDOMNode(this.refs.fileName).value = this.packOptions.fileName;
         ReactDOM.findDOMNode(this.refs.savePath).value = this.packOptions.savePath;
         ReactDOM.findDOMNode(this.refs.width).value = Number(this.packOptions.width) || 0;
@@ -177,11 +178,11 @@ class PackProperties extends React.Component {
         ReactDOM.findDOMNode(this.refs.extrude).value = Number(this.packOptions.extrude) || 0;
         ReactDOM.findDOMNode(this.refs.allowRotation).checked = this.packOptions.allowRotation;
         ReactDOM.findDOMNode(this.refs.allowTrim).checked = this.packOptions.allowTrim;
-        ReactDOM.findDOMNode(this.refs.trimMode).value = this.packOptions.trimMode;
+        this.refs.trimMode.value = this.packOptions.trimMode;
         ReactDOM.findDOMNode(this.refs.alphaThreshold).value = this.packOptions.alphaThreshold || 0;
         ReactDOM.findDOMNode(this.refs.detectIdentical).checked = this.packOptions.detectIdentical;
-        ReactDOM.findDOMNode(this.refs.packer).value = this.packOptions.packer;
-        ReactDOM.findDOMNode(this.refs.packerMethod).value = this.packOptions.packerMethod;
+        this.refs.packer.value = this.packOptions.packer;
+        this.refs.packerMethod.value = this.packOptions.packerMethod;
     }
 
     getPackOptions() {
@@ -208,7 +209,7 @@ class PackProperties extends React.Component {
     }
 
     onExporterChanged() {
-        let exporter = getExporterByType(ReactDOM.findDOMNode(this.refs.exporter).value);
+        let exporter = getExporterByType(this.refs.exporter.value);
         let allowTrimInput = ReactDOM.findDOMNode(this.refs.allowTrim);
         let allowRotationInput = ReactDOM.findDOMNode(this.refs.allowRotation);
         
@@ -231,7 +232,7 @@ class PackProperties extends React.Component {
     }
     
     updateEditCustomTemplateButton() {
-        let exporter = getExporterByType(ReactDOM.findDOMNode(this.refs.exporter).value);
+        let exporter = getExporterByType(this.refs.exporter.value);
         ReactDOM.findDOMNode(this.refs.editCustomFormat).style.visibility = exporter.type === "custom" ? "visible" : "hidden";
     }
     
@@ -286,10 +287,13 @@ class PackProperties extends React.Component {
                             <tr title={I18.f("TEXTURE_FORMAT_TITLE")}>
                                 <td>{I18.f("TEXTURE_FORMAT")}</td>
                                 <td>
-                                    <select ref="textureFormat" className="border-color-gray" defaultValue={this.packOptions.textureFormat} onChange={this.onExporterChanged}>
-                                        <option value="png">png</option>
-                                        <option value="jpg">jpg</option>
-                                    </select>
+                                    <CustomSelect 
+                                        ref="textureFormat" 
+                                        defaultValue={this.packOptions.textureFormat} 
+                                        onChange={this.onExporterChanged}> 
+                                        <option value="png">png</option> 
+                                        <option value="jpg">jpg</option> 
+                                    </CustomSelect>
                                 </td>
                                 <td></td>
                             </tr>
@@ -326,22 +330,40 @@ class PackProperties extends React.Component {
                             <tr title={I18.f("FILTER_TITLE")}>
                                 <td>{I18.f("FILTER")}</td>
                                 <td>
-                                    <select ref="filter" className="border-color-gray" onChange={this.onExporterChanged} defaultValue={this.packOptions.filter}>
+                                    <CustomSelect 
+                                        ref="filter" 
+                                        onChange={this.onExporterChanged} 
+                                        defaultValue={this.packOptions.filter}> 
                                         {filters.map(node => {
-                                            return (<option key={"filter-" + node.type} defaultValue={node.type}>{node.type}</option>)
+                                            return (
+                                                <option 
+                                                    key={"filter-" + node.type} 
+                                                    value={node.type}>
+                                                    {node.type}
+                                                </option>
+                                            );
                                         })}
-                                    </select>
+                                    </CustomSelect>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr title={I18.f("FORMAT_TITLE")}>
                                 <td>{I18.f("FORMAT")}</td>
                                 <td>
-                                    <select ref="exporter" className="border-color-gray" onChange={this.onExporterChanged} defaultValue={this.packOptions.exporter}>
-                                    {exporters.map(node => {
-                                        return (<option key={"exporter-" + node.type} defaultValue={node.type}>{node.type}</option>)
-                                    })}
-                                    </select>
+                                    <CustomSelect 
+                                        ref="exporter" 
+                                        onChange={this.onExporterChanged} 
+                                        defaultValue={this.packOptions.exporter}> 
+                                        {exporters.map(node => {
+                                            return (
+                                                <option
+                                                    key={"exporter-" + node.type} 
+                                                    value={node.type}> 
+                                                    {node.type} 
+                                                </option>
+                                            );
+                                        })}
+                                    </CustomSelect>
                                 </td>
                                 <td>
                                     <div className="edit-btn back-800" ref="editCustomFormat" onClick={this.editCustomExporter}></div>
@@ -408,10 +430,14 @@ class PackProperties extends React.Component {
                             <tr title={I18.f("TRIM_MODE_TITLE")}>
                                 <td>{I18.f("TRIM_MODE")}</td>
                                 <td>
-                                    <select ref="trimMode" className="border-color-gray" onChange={this.onPropChanged} defaultValue={this.packOptions.trimMode}  disabled={exporterTrimDisabled || !this.packOptions.allowTrim}>
-                                        <option value="trim">trim</option>
-                                        <option value="crop">crop</option>
-                                    </select>
+                                    <CustomSelect 
+                                        ref="trimMode" 
+                                        onChange={this.onPropChanged} 
+                                        defaultValue={this.packOptions.trimMode} 
+                                        disabled={exporterTrimDisabled || !this.packOptions.allowTrim}> 
+                                        <option value="trim">trim</option> 
+                                        <option value="crop">crop</option> 
+                                    </CustomSelect>
                                 </td>
                                 <td></td>
                             </tr>
@@ -428,11 +454,20 @@ class PackProperties extends React.Component {
                             <tr title={I18.f("PACKER_TITLE")}>
                                 <td>{I18.f("PACKER")}</td>
                                 <td>
-                                    <select ref="packer" className="border-color-gray" onChange={this.onPackerChange} defaultValue={this.packOptions.packer}>
-                                    {packers.map(node => {
-                                        return (<option key={"packer-" + node.type} defaultValue={node.type}>{node.type}</option>)
-                                    })}
-                                    </select>
+                                    <CustomSelect 
+                                        ref="packer" 
+                                        onChange={this.onPackerChange} 
+                                        defaultValue={this.packOptions.packer}> 
+                                        {packers.map(node => {
+                                            return (
+                                                <option 
+                                                    key={"packer-" + node.type} 
+                                                    value={node.type}> 
+                                                    {node.type} 
+                                                </option>
+                                            );
+                                        })}
+                                    </CustomSelect>
                                 </td>
                                 <td></td>
                             </tr>
@@ -469,7 +504,11 @@ class PackerMethods extends React.Component {
         }
 
         return (
-            <select onChange={this.props.handler} className="border-color-gray" defaultValue={this.props.defaultMethod} >{items}</select>
+            <CustomSelect 
+                onChange={this.props.handler} 
+                defaultValue={this.props.defaultMethod}> 
+                {items} 
+            </CustomSelect>
         )
     }
 }
