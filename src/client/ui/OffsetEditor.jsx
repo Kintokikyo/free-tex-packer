@@ -71,7 +71,14 @@ class OffsetEditor extends React.Component {
 
     updateStates() {
 
-        let names = this.getImageNames();
+        let names;
+        
+        if(images) {
+            names = Object.keys(images);
+        }
+        else {
+            names = this.getImageNames();
+        }
 
         let groups = {};
 
