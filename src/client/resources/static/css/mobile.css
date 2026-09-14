@@ -3329,3 +3329,142 @@
     }
 
 }
+
+/* =========================================================
+   MODERN DARK MESSAGE BOX
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    /* Overlay */
+    .message-box-wrapper {
+        background: rgba(0, 0, 0, 0.58) !important;
+    }
+
+
+    /* Popup */
+    .message-box-window {
+        background: #20252d !important;
+        color: #e6e9ee !important;
+
+        border: 1px solid #3b4655 !important;
+        border-radius: 10px !important;
+
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.45) !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* Text */
+    .message-box-content {
+        color: #e6e9ee !important;
+    }
+
+
+    /* Area buttons */
+    .message-box-buttons {
+        background: transparent !important;
+        color: #e6e9ee !important;
+    }
+
+
+    /* Semua tombol popup */
+    .message-box-buttons .btn {
+        border: none !important;
+        border-width: 0 !important;
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+
+        border-radius: 6px !important;
+
+        box-shadow: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            transform 0.1s ease !important;
+    }
+
+
+    /* YA */
+    .message-box-buttons .btn:first-child {
+        background: #2fa866 !important;
+        background-color: #2fa866 !important;
+    }
+
+    .message-box-buttons .btn:first-child:hover {
+        background: #36b873 !important;
+        background-color: #36b873 !important;
+    }
+
+    .message-box-buttons .btn:first-child:active {
+        background: #278e55 !important;
+        background-color: #278e55 !important;
+
+        transform: scale(0.96);
+    }
+
+
+    /* TIDAK */
+    .message-box-buttons .btn:last-child {
+        background: #e05260 !important;
+        background-color: #e05260 !important;
+    }
+
+    .message-box-buttons .btn:last-child:hover {
+        background: #ec626f !important;
+        background-color: #ec626f !important;
+    }
+
+    .message-box-buttons .btn:last-child:active {
+        background: #c83f4d !important;
+        background-color: #c83f4d !important;
+
+        transform: scale(0.96);
+    }
+
+
+    /* Kalau hanya ada SATU tombol, misalnya OK */
+    .message-box-buttons .btn:only-child {
+        background: #2fa866 !important;
+        background-color: #2fa866 !important;
+    }
+
+    .message-box-buttons .btn:only-child:hover {
+        background: #36b873 !important;
+        background-color: #36b873 !important;
+    }
+
+    .message-box-buttons .btn:only-child:active {
+        background: #278e55 !important;
+        background-color: #278e55 !important;
+
+        transform: scale(0.96);
+    }
+}
+
+/* DARK NATIVE SELECT / OPTION */
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .pack-properties-containter select,
+    .sheet-splitter-controls select {
+        color-scheme: dark !important;
+        background-color: #282e38 !important;
+        color: #e6e9ee !important;
+        border-color: #3b4655 !important;
+    }
+
+    .pack-properties-containter select option,
+    .sheet-splitter-controls select option {
+        background-color: #20252d !important;
+        color: #e6e9ee !important;
+    }
+
+    .pack-properties-containter select:focus,
+    .sheet-splitter-controls select:focus {
+        color-scheme: dark !important;
+        outline: none !important;
+    }
+}
