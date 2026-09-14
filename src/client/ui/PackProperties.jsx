@@ -489,6 +489,15 @@ class PackProperties extends React.Component {
 }
 
 class PackerMethods extends React.Component {
+
+    get value() {
+        return this.refs.select.value;
+    }
+
+    set value(value) {
+        this.refs.select.value = value;
+    }
+
     render() {
         let packer = getPackerByType(this.props.packer);
 
@@ -499,17 +508,27 @@ class PackerMethods extends React.Component {
         let items = [];
         
         let methods = Object.keys(packer.methods);
+
         for(let item of methods) {
-            items.push(<option value={item} key={"packer-method-" + item }>{item}</option>);
+            items.push(
+                <option
+                    value={item}
+                    key={"packer-method-" + item}
+                >
+                    {item}
+                </option>
+            );
         }
 
         return (
-            <CustomSelect 
-                onChange={this.props.handler} 
-                defaultValue={this.props.defaultMethod}> 
-                {items} 
+            <CustomSelect
+                ref="select"
+                onChange={this.props.handler}
+                defaultValue={this.props.defaultMethod}
+            >
+                {items}
             </CustomSelect>
-        )
+        );
     }
 }
 
