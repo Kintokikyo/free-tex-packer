@@ -109,10 +109,25 @@ class OffsetEditor extends React.Component {
         ) {
             selectedState = states.length ? states[0].name : "";
         }
+        
+        let offsets = {
+            ...this.state.offsets
+        };
+
+        for(let stateName of Object.keys(offsets)) {
+            if(!groups[stateName]) {
+                delete offsets[stateName];
+            }
+        }
+
+        let selectedOffset = offsets[selectedState];
 
         this.setState({
             states: states,
-            selectedState: selectedState
+            selectedState: selectedState, 
+            offsets: offsets, 
+            offsetX: selectedOffset ? String(selectedOffset.x) : "0", 
+            offsetY: selectedOffset ? String(selectedOffset.y) : "0"
         });
     }
 
