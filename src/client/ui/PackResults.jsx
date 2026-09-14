@@ -122,7 +122,12 @@ class PackResults extends React.Component {
                             {views}
                         </div>
                         <div className={!this.state.playerVisible ? "block-hidden" : "block-visible"}>
-                            <SpritesPlayer ref="spritesPlayer" data={this.state.packResult} start={this.state.playerVisible} textureBack={this.state.textureBack} />
+                            <SpritesPlayer 
+                                ref="spritesPlayer" 
+                                data={this.state.packResult} 
+                                start={this.state.playerVisible} 
+                                textureBack={this.state.textureBack} 
+                                scale={this.state.scale} />
                         </div>
                     </div>
                     
