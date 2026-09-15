@@ -3724,16 +3724,26 @@
 }
 
 /* =========================================================
-   LEBARKAN SEMUA PEMILIHAN KE ARAH KANAN
+   SAMAKAN LEBAR SEMUA KONTROL PACK PROPERTIES
    ========================================================= */
 
 @media screen and (orientation: landscape) and (max-width: 1200px) {
 
     .pack-properties-containter
     td:nth-child(2)
-    .custom-select {
-        width: calc(100% + 30px) !important;
-        max-width: calc(100% + 30px) !important;
+    .custom-select,
+
+    .pack-properties-containter
+    td:nth-child(2)
+    > input[type="text"],
+
+    .pack-properties-containter
+    td:nth-child(2)
+    > input[type="number"] {
+
+        width: calc(100% + 29px) !important;
+        max-width: calc(100% + 29px) !important;
+        box-sizing: border-box !important;
     }
 
 }
