@@ -3724,6 +3724,21 @@
 }
 
 /* =========================================================
+   LEBARKAN SEMUA PEMILIHAN KE ARAH KANAN
+   ========================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 1200px) {
+
+    .pack-properties-containter
+    td:nth-child(2)
+    .custom-select {
+        width: calc(100% + 30px) !important;
+        max-width: calc(100% + 30px) !important;
+    }
+
+}
+
+/* =========================================================
    MODERN ABOUT / INFO
    ========================================================= */
 
