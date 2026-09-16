@@ -3741,8 +3741,8 @@
     td:nth-child(2)
     > input[type="number"] {
 
-        width: calc(100% + 29px) !important;
-        max-width: calc(100% + 29px) !important;
+        width: calc(100% + 28px) !important;
+        max-width: calc(100% + 28px) !important;
         box-sizing: border-box !important;
     }
 
